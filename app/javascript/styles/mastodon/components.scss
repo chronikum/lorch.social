@@ -2112,7 +2112,7 @@ a.account__display-name {
   flex-direction: column;
 
   > .scrollable {
-    background: $ui-base-color;
+    background: #FFEEC0;
   }
 }
 
@@ -2642,7 +2642,7 @@ a.account__display-name {
   height: 100%;
 
   &.darker {
-    background: $ui-base-color;
+    background: #FFEEC0;
   }
 }
 
@@ -2818,7 +2818,7 @@ a.account__display-name {
   height: 24px;
   padding: 0;
   border-radius: 30px;
-  background-color: $ui-base-color;
+  background-color: #FFEEC0;
   transition: background-color 0.2s ease;
 }
 
@@ -2936,13 +2936,13 @@ a.account__display-name {
   font-size: 12px;
   line-height: 19px;
   font-weight: 500;
-  background: $ui-base-color;
+  background: #FFEEC0;
   padding: 4px 8px;
   margin: -6px 10px;
 }
 
 .column-subheading {
-  background: $ui-base-color;
+  background: #FFEEC0;
   color: $dark-text-color;
   padding: 8px 20px;
   font-size: 12px;
@@ -2954,7 +2954,7 @@ a.account__display-name {
 .getting-started__wrapper,
 .getting-started,
 .flex-spacer {
-  background: $ui-base-color;
+  background: #FFEEC0;
 }
 
 .getting-started__wrapper {
@@ -3367,7 +3367,7 @@ a.status-card.compact:hover {
   font-size: 16px;
   font-weight: 500;
   color: $dark-text-color;
-  background: $ui-base-color;
+  background: #FFEEC0;
   cursor: default;
   display: flex;
   flex: 1 1 auto;
@@ -3996,7 +3996,7 @@ a.status-card.compact:hover {
 .error-column,
 .follow_requests-unlocked_explanation {
   color: $dark-text-color;
-  background: $ui-base-color;
+  background: #FFEEC0;
   text-align: center;
   padding: 20px;
   font-size: 15px;
@@ -4198,7 +4198,7 @@ a.status-card.compact:hover {
   left: 0;
   z-index: -1;
   border-radius: 4px;
-  background: $ui-base-color;
+  background: #FFEEC0;
   box-shadow: 0 0 5px rgba($base-shadow-color, 0.2);
 }
 
@@ -4888,7 +4888,7 @@ a.status-card.compact:hover {
   }
 
   &__case {
-    background: $ui-base-color;
+    background: #FFEEC0;
     color: $secondary-text-color;
     font-weight: 500;
     padding: 10px;
@@ -6002,7 +6002,7 @@ a.status-card.compact:hover {
     }
 
     &__extra {
-      background: $ui-base-color;
+      background: #FFEEC0;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -6136,7 +6136,7 @@ a.status-card.compact:hover {
 }
 
 .filter-form {
-  background: $ui-base-color;
+  background: #FFEEC0;
 
   &__column {
     padding: 10px 15px;
@@ -6336,7 +6336,7 @@ noscript {
       border: 0;
       padding: 10px;
       font-family: $font-monospace, monospace;
-      background: $ui-base-color;
+      background: #FFEEC0;
       color: $primary-text-color;
       font-size: 14px;
       margin: 0;
@@ -6446,7 +6446,7 @@ noscript {
 }
 
 .list-editor {
-  background: $ui-base-color;
+  background: #FFEEC0;
   flex-direction: column;
   border-radius: 8px;
   box-shadow: 2px 4px 15px rgba($base-shadow-color, 0.4);
@@ -6500,7 +6500,7 @@ noscript {
 }
 
 .list-adder {
-  background: $ui-base-color;
+  background: #FFEEC0;
   flex-direction: column;
   border-radius: 8px;
   box-shadow: 2px 4px 15px rgba($base-shadow-color, 0.4);
@@ -6871,7 +6871,7 @@ noscript {
       }
 
       &:focus {
-        background: $ui-base-color;
+        background: #FFEEC0;
       }
     }
   }

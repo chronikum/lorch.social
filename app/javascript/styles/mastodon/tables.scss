@@ -27,7 +27,7 @@
 
   & > tbody > tr:nth-child(odd) > td,
   & > tbody > tr:nth-child(odd) > th {
-    background: $ui-base-color;
+    background: #FFEEC0;
   }
 
   a {
@@ -67,7 +67,7 @@
 
   &.batch-table {
     & > thead > tr > th {
-      background: $ui-base-color;
+      background: #FFEEC0;
       border-top: 1px solid darken($ui-base-color, 8%);
       border-bottom: 1px solid darken($ui-base-color, 8%);
 
@@ -161,7 +161,7 @@ a.table-action-link {
 
   &__toolbar {
     border: 1px solid darken($ui-base-color, 8%);
-    background: $ui-base-color;
+    background: #FFEEC0;
     border-radius: 4px 0 0;
     height: 47px;
     align-items: center;
@@ -176,7 +176,7 @@ a.table-action-link {
     padding: 16px;
     border: 1px solid darken($ui-base-color, 8%);
     border-top: 0;
-    background: $ui-base-color;
+    background: #FFEEC0;
 
     .fields-row {
       padding-top: 0;
@@ -200,7 +200,7 @@ a.table-action-link {
     }
 
     &:nth-child(even) {
-      background: $ui-base-color;
+      background: #FFEEC0;
 
       &:hover {
         background: lighten($ui-base-color, 2%);
