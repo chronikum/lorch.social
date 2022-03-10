@@ -54,7 +54,7 @@ table {
 }
 
 html {
-  scrollbar-color: lighten(#FFEEC0, 4%) rgba($base-overlay-background, 0.1);
+  scrollbar-color: lighten($ui-base-color, 4%) rgba($base-overlay-background, 0.1);
 }
 
 ::-webkit-scrollbar {
@@ -63,17 +63,17 @@ html {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: lighten(#FFEEC0, 4%);
+  background: lighten($ui-base-color, 4%);
   border: 0px none $base-border-color;
   border-radius: 50px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: lighten(#FFEEC0, 6%);
+  background: lighten($ui-base-color, 6%);
 }
 
 ::-webkit-scrollbar-thumb:active {
-  background: lighten(#FFEEC0, 4%);
+  background: lighten($ui-base-color, 4%);
 }
 
 ::-webkit-scrollbar-track {
@@ -83,11 +83,11 @@ html {
 }
 
 ::-webkit-scrollbar-track:hover {
-  background: #FFEEC0;
+  background: $ui-base-color;
 }
 
 ::-webkit-scrollbar-track:active {
-  background: #FFEEC0;
+  background: $ui-base-color;
 }
 
 ::-webkit-scrollbar-corner {

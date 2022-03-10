@@ -95,7 +95,7 @@ td {
 .email-body,
 html,
 body {
-  background-color: lighten(#FFEEC0, 4%);
+  background-color: lighten($ui-base-color, 4%);
 }
 
 .email-container,
@@ -242,7 +242,7 @@ h5 {
   font-size: 16px;
   line-height: 21px;
   font-weight: 700;
-  color: lighten(#FFEEC0, 34%);
+  color: lighten($ui-base-color, 34%);
 }
 
 .input-cell {
@@ -253,7 +253,7 @@ h5 {
 
 .input {
   td {
-    background: darken(#FFEEC0, 8%);
+    background: darken($ui-base-color, 8%);
     border-radius: 4px;
     padding: 16px;
     line-height: 20px;
@@ -275,15 +275,15 @@ h5 {
 }
 
 .content-cell {
-  background-color: darken(#FFEEC0, 4%);
+  background-color: darken($ui-base-color, 4%);
 
   &.darker {
-    background-color: darken(#FFEEC0, 8%);
+    background-color: darken($ui-base-color, 8%);
   }
 }
 
 .hero {
-  background-color: #FFEEC0;
+  background-color: $ui-base-color;
   padding-top: 20px;
 }
 
@@ -301,7 +301,7 @@ h5 {
 
 .header {
   border-radius: 5px 5px 0 0;
-  background-color: darken(#FFEEC0, 8%);
+  background-color: darken($ui-base-color, 8%);
 
   .column-cell {
     text-align: center;
@@ -322,7 +322,7 @@ h5 {
 .footer {
   .column-cell,
   p {
-    color: lighten(#FFEEC0, 34%);
+    color: lighten($ui-base-color, 34%);
   }
 
   p {
@@ -335,7 +335,7 @@ h5 {
   }
 
   a {
-    color: lighten(#FFEEC0, 34%);
+    color: lighten($ui-base-color, 34%);
     text-decoration: underline;
   }
 
@@ -394,7 +394,7 @@ h5 {
 }
 
 .button-default {
-  background-color: darken(#FFEEC0, 8%);
+  background-color: darken($ui-base-color, 8%);
 }
 
 .button-primary {
@@ -459,7 +459,7 @@ h5 {
     overflow: hidden;
     height: 2px;
     background-color: transparent !important;
-    border-top: 1px solid lighten(#FFEEC0, 8%);
+    border-top: 1px solid lighten($ui-base-color, 8%);
   }
 }
 
@@ -467,7 +467,7 @@ h5 {
   padding-bottom: 32px;
 
   &--highlighted {
-    border: 1px solid lighten(#FFEEC0, 8%);
+    border: 1px solid lighten($ui-base-color, 8%);
     border-radius: 4px;
     padding-bottom: 16px;
     margin-bottom: 16px;
@@ -502,19 +502,19 @@ h5 {
     margin-bottom: 20px;
 
     &.status-footer {
-      color: lighten(#FFEEC0, 26%);
+      color: lighten($ui-base-color, 26%);
       font-size: 14px;
       margin-bottom: 0;
 
       a {
-        color: lighten(#FFEEC0, 26%);
+        color: lighten($ui-base-color, 26%);
       }
     }
   }
 }
 
 .border-top {
-  border-top: 1px solid lighten(#FFEEC0, 8%);
+  border-top: 1px solid lighten($ui-base-color, 8%);
 }
 
 ul {
@@ -525,7 +525,7 @@ ul {
 
   li {
     margin-bottom: 16px;
-    color: lighten(#FFEEC0, 26%);
+    color: lighten($ui-base-color, 26%);
 
     span {
       color: $ui-primary-color;

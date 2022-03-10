@@ -4,14 +4,14 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: #FFEEC0;
+  background: $ui-base-color;
 
   @media screen and (max-width: 920px) {
     display: block !important;
   }
 
   &__pager {
-    background: darken(#FFEEC0, 8%);
+    background: darken($ui-base-color, 8%);
     box-shadow: 0 0 15px rgba($base-shadow-color, 0.2);
     overflow: hidden;
   }
@@ -99,9 +99,9 @@
 
       code {
         display: inline-block;
-        background: darken(#FFEEC0, 8%);
+        background: darken($ui-base-color, 8%);
         font-size: 15px;
-        border: 1px solid lighten(#FFEEC0, 8%);
+        border: 1px solid lighten($ui-base-color, 8%);
         border-radius: 2px;
         padding: 1px 3px;
       }
@@ -135,7 +135,7 @@
     cursor: pointer;
 
     &:hover {
-      background: lighten(#FFEEC0, 8%);
+      background: lighten($ui-base-color, 8%);
     }
 
     &.active {

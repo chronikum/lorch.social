@@ -30,7 +30,7 @@
   }
 
   .entry {
-    background: #FFEEC0;
+    background: $ui-base-color;
 
     .detailed-status,
     .status,
@@ -73,7 +73,7 @@
   }
 
   &--highlighted .entry {
-    background: lighten(#FFEEC0, 8%);
+    background: lighten($ui-base-color, 8%);
   }
 }
 

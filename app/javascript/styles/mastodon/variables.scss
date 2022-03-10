@@ -23,8 +23,8 @@ $valid-value-color: $success-green !default;
 $error-value-color: $error-red !default;
 
 // Tell UI to use selected colors
-#FFEEC0: $classic-base-color !default;                  // Darkest
-$ui-base-lighter-color: lighten(#FFEEC0, 26%) !default; // Lighter darkest
+$ui-base-color: $classic-base-color !default;                  // Darkest
+$ui-base-lighter-color: lighten($ui-base-color, 26%) !default; // Lighter darkest
 $ui-primary-color: $classic-primary-color !default;            // Lighter
 $ui-secondary-color: $classic-secondary-color !default;        // Lightest
 $ui-highlight-color: $classic-highlight-color !default;
@@ -39,7 +39,7 @@ $action-button-color: $ui-base-lighter-color !default;
 $passive-text-color: $gold-star !default;
 $active-passive-text-color: $success-green !default;
 // For texts on inverted backgrounds
-$inverted-text-color: #FFEEC0 !default;
+$inverted-text-color: $ui-base-color !default;
 $lighter-text-color: $ui-base-lighter-color !default;
 $light-text-color: $ui-primary-color !default;
 

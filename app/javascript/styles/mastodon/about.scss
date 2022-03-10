@@ -60,7 +60,7 @@ $small-breakpoint: 960px;
 
   code {
     font-size: 0.85em;
-    background: darken(#FFEEC0, 8%);
+    background: darken($ui-base-color, 8%);
     border-radius: 4px;
     padding: 0.2em 0.3em;
   }
@@ -127,7 +127,7 @@ $small-breakpoint: 960px;
     width: 100%;
     height: 0;
     border: 0;
-    border-bottom: 1px solid lighten(#FFEEC0, 4%);
+    border-bottom: 1px solid lighten($ui-base-color, 4%);
     margin: 1.7em 0;
 
     &.spacer {
@@ -145,7 +145,7 @@ $small-breakpoint: 960px;
 
     thead tr,
     tbody tr {
-      border-bottom: 1px solid lighten(#FFEEC0, 4%);
+      border-bottom: 1px solid lighten($ui-base-color, 4%);
       font-size: 1em;
       line-height: 1.625;
       font-weight: 400;
@@ -194,7 +194,7 @@ $small-breakpoint: 960px;
 }
 
 .information-board {
-  background: darken(#FFEEC0, 4%);
+  background: darken($ui-base-color, 4%);
   padding: 20px 0;
 
   .container-alt {
@@ -244,7 +244,7 @@ $small-breakpoint: 960px;
     position: absolute;
     width: 280px;
     box-sizing: border-box;
-    background: darken(#FFEEC0, 8%);
+    background: darken($ui-base-color, 8%);
     padding: 20px;
     padding-top: 10px;
     border-radius: 4px 4px 0 0;
@@ -259,7 +259,7 @@ $small-breakpoint: 960px;
       color: $darker-text-color;
       padding-bottom: 5px;
       margin-bottom: 15px;
-      border-bottom: 1px solid lighten(#FFEEC0, 4%);
+      border-bottom: 1px solid lighten($ui-base-color, 4%);
       text-overflow: ellipsis;
       white-space: nowrap;
       overflow: hidden;
@@ -451,7 +451,7 @@ $small-breakpoint: 960px;
   }
 
   &__call-to-action {
-    background: #FFEEC0;
+    background: $ui-base-color;
     border-radius: 4px;
     padding: 25px 40px;
     overflow: hidden;
@@ -566,7 +566,7 @@ $small-breakpoint: 960px;
   &__forms,
   #mastodon-timeline {
     box-sizing: border-box;
-    background: #FFEEC0;
+    background: $ui-base-color;
     border-radius: 4px;
     box-shadow: 0 0 6px rgba($black, 0.1);
   }
@@ -724,7 +724,7 @@ $small-breakpoint: 960px;
     }
 
     &__footer {
-      background: #FFEEC0;
+      background: $ui-base-color;
       padding: 10px;
       border-radius: 0 0 4px 4px;
       display: flex;
@@ -836,7 +836,7 @@ $small-breakpoint: 960px;
       .hero-widget,
       .box-widget,
       .directory__tag {
-        border-bottom: 1px solid lighten(#FFEEC0, 8%);
+        border-bottom: 1px solid lighten($ui-base-color, 8%);
       }
 
       .directory {
@@ -884,14 +884,14 @@ $small-breakpoint: 960px;
 }
 
 .rules-list {
-  background: darken(#FFEEC0, 2%);
-  border: 1px solid darken(#FFEEC0, 8%);
+  background: darken($ui-base-color, 2%);
+  border: 1px solid darken($ui-base-color, 8%);
   border-radius: 4px;
   padding: 0.5em 2.5em !important;
   margin-top: 1.85em !important;
 
   li {
-    border-bottom: 1px solid lighten(#FFEEC0, 4%);
+    border-bottom: 1px solid lighten($ui-base-color, 4%);
     color: $dark-text-color;
     padding: 1em;
 

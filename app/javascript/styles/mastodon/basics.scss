@@ -55,7 +55,7 @@ body {
   }
 
   &.lighter {
-    background: #FFEEC0;
+    background: $ui-base-color;
   }
 
   &.with-modals {
@@ -97,7 +97,7 @@ body {
   }
 
   &.embed {
-    background: lighten(#FFEEC0, 4%);
+    background: lighten($ui-base-color, 4%);
     margin: 0;
     padding-bottom: 0;
 
@@ -110,7 +110,7 @@ body {
   }
 
   &.admin {
-    background: darken(#FFEEC0, 4%);
+    background: darken($ui-base-color, 4%);
     padding: 0;
   }
 
@@ -118,7 +118,7 @@ body {
     position: absolute;
     text-align: center;
     color: $darker-text-color;
-    background: #FFEEC0;
+    background: $ui-base-color;
     width: 100%;
     height: 100%;
     padding: 0;
