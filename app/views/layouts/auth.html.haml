@@ -2,11 +2,9 @@
   = javascript_pack_tag 'public', crossorigin: 'anonymous'
 
 .hero-widget
-  .hero-widget__img
-    = image_tag @instance_presenter.hero&.file&.url || @instance_presenter.thumbnail&.file&.url || asset_pack_path('media/images/preview.jpg'), alt: @instance_presenter.site_title
-
   .hero-widget__text
-    %p= @instance_presenter.site_short_description.html_safe.presence || t('about.about_mastodon_html')
+    %h4
+		= Tausch und Spendenplattform für die Stadt Lorch.
 - content_for :content do
   .container-alt
     .logo-container
