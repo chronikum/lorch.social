@@ -907,7 +907,7 @@ $small-breakpoint: 960px;
 
 .rich-formatting-centered {
 	font-family: $font-sans-serif, sans-serif;
-	font-size: 3em;
+	font-size: 5em !important;
 	font-weight: 400;
 	line-height: 1.7;
 	word-wrap: break-word;
@@ -929,7 +929,7 @@ $small-breakpoint: 960px;
 	}
   
 	h1 {
-	  font-size: 2em;
+	  font-size: 5em;
 	  text-align: center;
 	}
   
