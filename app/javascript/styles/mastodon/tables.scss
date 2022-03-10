@@ -9,14 +9,14 @@
     padding: 8px;
     line-height: 18px;
     vertical-align: top;
-    border-top: 1px solid $ui-base-color;
+    border-top: 1px solid #FFEEC0;
     text-align: left;
-    background: darken($ui-base-color, 4%);
+    background: darken(#FFEEC0, 4%);
   }
 
   & > thead > tr > th {
     vertical-align: bottom;
-    border-bottom: 2px solid $ui-base-color;
+    border-bottom: 2px solid #FFEEC0;
     border-top: 0;
     font-weight: 500;
   }
@@ -27,7 +27,7 @@
 
   & > tbody > tr:nth-child(odd) > td,
   & > tbody > tr:nth-child(odd) > th {
-    background: $ui-base-color;
+    background: #FFEEC0;
   }
 
   a {
@@ -67,18 +67,18 @@
 
   &.batch-table {
     & > thead > tr > th {
-      background: $ui-base-color;
-      border-top: 1px solid darken($ui-base-color, 8%);
-      border-bottom: 1px solid darken($ui-base-color, 8%);
+      background: #FFEEC0;
+      border-top: 1px solid darken(#FFEEC0, 8%);
+      border-bottom: 1px solid darken(#FFEEC0, 8%);
 
       &:first-child {
         border-radius: 4px 0 0;
-        border-left: 1px solid darken($ui-base-color, 8%);
+        border-left: 1px solid darken(#FFEEC0, 8%);
       }
 
       &:last-child {
         border-radius: 0 4px 0 0;
-        border-right: 1px solid darken($ui-base-color, 8%);
+        border-right: 1px solid darken(#FFEEC0, 8%);
       }
     }
   }
@@ -160,8 +160,8 @@ a.table-action-link {
   }
 
   &__toolbar {
-    border: 1px solid darken($ui-base-color, 8%);
-    background: $ui-base-color;
+    border: 1px solid darken(#FFEEC0, 8%);
+    background: #FFEEC0;
     border-radius: 4px 0 0;
     height: 47px;
     align-items: center;
@@ -174,9 +174,9 @@ a.table-action-link {
 
   &__form {
     padding: 16px;
-    border: 1px solid darken($ui-base-color, 8%);
+    border: 1px solid darken(#FFEEC0, 8%);
     border-top: 0;
-    background: $ui-base-color;
+    background: #FFEEC0;
 
     .fields-row {
       padding-top: 0;
@@ -185,25 +185,25 @@ a.table-action-link {
   }
 
   &__row {
-    border: 1px solid darken($ui-base-color, 8%);
+    border: 1px solid darken(#FFEEC0, 8%);
     border-top: 0;
-    background: darken($ui-base-color, 4%);
+    background: darken(#FFEEC0, 4%);
 
     @media screen and (max-width: $no-gap-breakpoint) {
       .optional &:first-child {
-        border-top: 1px solid darken($ui-base-color, 8%);
+        border-top: 1px solid darken(#FFEEC0, 8%);
       }
     }
 
     &:hover {
-      background: darken($ui-base-color, 2%);
+      background: darken(#FFEEC0, 2%);
     }
 
     &:nth-child(even) {
-      background: $ui-base-color;
+      background: #FFEEC0;
 
       &:hover {
-        background: lighten($ui-base-color, 2%);
+        background: lighten(#FFEEC0, 2%);
       }
     }
 
@@ -276,12 +276,12 @@ a.table-action-link {
   }
 
   .nothing-here {
-    border: 1px solid darken($ui-base-color, 8%);
+    border: 1px solid darken(#FFEEC0, 8%);
     border-top: 0;
     box-shadow: none;
 
     @media screen and (max-width: $no-gap-breakpoint) {
-      border-top: 1px solid darken($ui-base-color, 8%);
+      border-top: 1px solid darken(#FFEEC0, 8%);
     }
   }
 

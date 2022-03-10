@@ -6,7 +6,6 @@ $classic-primary-color: #9baec8;
 $classic-secondary-color: #d9e1e8;
 $classic-highlight-color: #2b90d9;
 
-$ui-base-color: #FFEEC0 !default;
 $ui-primary-color: $classic-primary-color !default;
 $ui-secondary-color: $classic-secondary-color !default;
 
@@ -20,5 +19,5 @@ $highlight-text-color: $classic-highlight-color !default;
 $action-button-color: #8d9ac2;
 
 $inverted-text-color: $black !default;
-$lighter-text-color: darken($ui-base-color, 6%) !default;
+$lighter-text-color: darken(#FFEEC0, 6%) !default;
 $light-text-color: darken($ui-primary-color, 40%) !default;

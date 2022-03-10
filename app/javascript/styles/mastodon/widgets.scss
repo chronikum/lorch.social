@@ -26,7 +26,7 @@
   }
 
   &__text {
-    background: $ui-base-color;
+    background: #FFEEC0;
     padding: 20px;
     border-radius: 0 0 4px 4px;
     font-size: 15px;
@@ -115,7 +115,7 @@
 .box-widget {
   padding: 20px;
   border-radius: 4px;
-  background: $ui-base-color;
+  background: #FFEEC0;
   box-shadow: 0 0 15px rgba($base-shadow-color, 0.2);
 }
 
@@ -173,7 +173,7 @@
   padding: 15px;
   padding-bottom: 20px;
   border-radius: 4px;
-  background: $ui-base-color;
+  background: #FFEEC0;
   box-shadow: 0 0 15px rgba($base-shadow-color, 0.2);
   color: $secondary-text-color;
   font-weight: 400;
@@ -250,7 +250,7 @@
 }
 
 .page-header {
-  background: lighten($ui-base-color, 8%);
+  background: lighten(#FFEEC0, 8%);
   box-shadow: 0 0 15px rgba($base-shadow-color, 0.2);
   border-radius: 4px;
   padding: 60px 15px;
@@ -272,7 +272,7 @@
 
   @media screen and (max-width: $no-gap-breakpoint) {
     margin-top: 0;
-    background: lighten($ui-base-color, 4%);
+    background: lighten(#FFEEC0, 4%);
 
     h1 {
       font-size: 24px;
@@ -281,7 +281,7 @@
 }
 
 .directory {
-  background: $ui-base-color;
+  background: #FFEEC0;
   border-radius: 4px;
   box-shadow: 0 0 15px rgba($base-shadow-color, 0.2);
 
@@ -294,7 +294,7 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      background: $ui-base-color;
+      background: #FFEEC0;
       border-radius: 4px;
       padding: 15px;
       text-decoration: none;
@@ -306,7 +306,7 @@
       &:hover,
       &:active,
       &:focus {
-        background: lighten($ui-base-color, 8%);
+        background: lighten(#FFEEC0, 8%);
       }
     }
 
@@ -377,8 +377,8 @@
     border-radius: 50%;
     position: relative;
     margin-left: -10px;
-    background: darken($ui-base-color, 8%);
-    border: 2px solid $ui-base-color;
+    background: darken(#FFEEC0, 8%);
+    border: 2px solid #FFEEC0;
 
     &:nth-child(1) {
       z-index: 1;
@@ -421,7 +421,7 @@
   tbody td {
     padding: 15px 0;
     vertical-align: middle;
-    border-bottom: 1px solid lighten($ui-base-color, 8%);
+    border-bottom: 1px solid lighten(#FFEEC0, 8%);
   }
 
   tbody tr:last-child td {
@@ -519,7 +519,7 @@ $fluid-breakpoint: $maximum-width + 20px;
     border-radius: 4px;
 
     @media screen and (max-width: $no-gap-breakpoint) {
-      border-top: 1px solid lighten($ui-base-color, 16%);
+      border-top: 1px solid lighten(#FFEEC0, 16%);
     }
 
     &.compact {
@@ -586,7 +586,7 @@ $fluid-breakpoint: $maximum-width + 20px;
 }
 
 .table-of-contents {
-  background: darken($ui-base-color, 4%);
+  background: darken(#FFEEC0, 4%);
   min-height: 100%;
   font-size: 14px;
   border-radius: 4px;
@@ -600,7 +600,7 @@ $fluid-breakpoint: $maximum-width + 20px;
     text-overflow: ellipsis;
     text-decoration: none;
     color: $primary-text-color;
-    border-bottom: 1px solid lighten($ui-base-color, 4%);
+    border-bottom: 1px solid lighten(#FFEEC0, 4%);
 
     &:hover,
     &:focus,
@@ -615,6 +615,6 @@ $fluid-breakpoint: $maximum-width + 20px;
 
   li ul {
     padding-left: 20px;
-    border-bottom: 1px solid lighten($ui-base-color, 4%);
+    border-bottom: 1px solid lighten(#FFEEC0, 4%);
   }
 }

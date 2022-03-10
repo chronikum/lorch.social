@@ -4,7 +4,7 @@
     padding-top: 20px;
     padding-bottom: 60px;
     font-size: 12px;
-    color: lighten($ui-base-color, 34%);
+    color: lighten(#FFEEC0, 34%);
 
     @media screen and (max-width: $no-gap-breakpoint) {
       padding-left: 20px;
@@ -35,7 +35,7 @@
         text-align: center;
 
         h4 a {
-          color: lighten($ui-base-color, 34%);
+          color: lighten(#FFEEC0, 34%);
         }
       }
 
@@ -107,7 +107,7 @@
 
     ul a {
       text-decoration: none;
-      color: lighten($ui-base-color, 34%);
+      color: lighten(#FFEEC0, 34%);
 
       &:hover,
       &:active,
@@ -122,14 +122,14 @@
         height: 36px;
         width: auto;
         margin: 0 auto;
-        fill: lighten($ui-base-color, 34%);
+        fill: lighten(#FFEEC0, 34%);
       }
 
       &:hover,
       &:focus,
       &:active {
         svg {
-          fill: lighten($ui-base-color, 38%);
+          fill: lighten(#FFEEC0, 38%);
         }
       }
     }
