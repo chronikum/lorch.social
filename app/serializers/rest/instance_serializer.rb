@@ -5,7 +5,7 @@ class REST::InstanceSerializer < ActiveModel::Serializer
 
   attributes :uri, :title, :short_description, :description, :email,
              :version, :urls, :stats, :thumbnail,
-             :languages, :registrations, :approval_required, :invites_enabled,
+             :languages, :registrations, :max_toot_chars, :approval_required, :invites_enabled,
              :configuration
 
   has_one :contact_account, serializer: REST::AccountSerializer
@@ -100,5 +100,9 @@ class REST::InstanceSerializer < ActiveModel::Serializer
 
   def instance_presenter
     @instance_presenter ||= InstancePresenter.new
+  end
+
+  def max_toot_chars
+   5000
   end
 end
