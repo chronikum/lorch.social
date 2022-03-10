@@ -904,3 +904,56 @@ $small-breakpoint: 960px;
     color: $primary-text-color;
   }
 }
+
+.rich-formatting-centered {
+	font-family: $font-sans-serif, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	line-height: 1.7;
+	word-wrap: break-word;
+	color: $darker-text-color;
+  
+	h1,
+	h2,
+	h3,
+	h4,
+	h5,
+	h6 {
+	  font-family: $font-display, sans-serif;
+	  margin-top: 1.275em;
+	  margin-bottom: .85em;
+	  font-weight: 500;
+	  color: $secondary-text-color;
+	  text-align: center;
+	}
+  
+	h1 {
+	  font-size: 2em;
+	  text-align: center;
+	}
+  
+	h2 {
+	  font-size: 1.75em;
+	}
+  
+	h3 {
+	  font-size: 1.5em;
+	}
+  
+	h4 {
+	  font-size: 1.25em;
+	}
+  
+	h5,
+	h6 {
+	  font-size: 1em;
+	}
+  
+	ul {
+	  list-style: disc;
+	}
+  
+	ol {
+	  list-style: decimal;
+	}
+}
