@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import api from '../api';
 import {
   fetchRelationships
@@ -46,10 +47,12 @@ export function submitSearch(tags) {
     }
 
     dispatch(fetchSearchRequest());
-
+    console.log('GETTING TAGS: ' + tags);
+	console.log('GETTING PROPS: ' + dispatch);
+	console.log('GETTING STATE: ' + getState);
     api(getState).get('/api/v2/search', {
       params: {
-        q: value + tags?.join(' '),
+        q: value,
         resolve: true,
         limit: 5,
       },
