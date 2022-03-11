@@ -62,6 +62,7 @@ class Search extends React.PureComponent {
     intl: PropTypes.object.isRequired,
     singleColumn: PropTypes.bool,
     isSuchen: PropTypes.bool,
+    isBieten: PropTypes.bool,
   };
 
   state = {
@@ -114,6 +115,11 @@ class Search extends React.PureComponent {
     this.setState({ expanded: false });
   }
 
+  getHashtagPrefix = () => {
+    // eslint-disable-next-line no-nested-ternary
+    return (this.props.isSuchen ? '#suchen' : (this.props.isBieten ? '#bieten' : '#')) || '';
+  }
+
   render () {
     const { intl, value, submitted } = this.props;
     const { expanded } = this.state;
@@ -128,7 +134,7 @@ class Search extends React.PureComponent {
             className='search__input'
             type='text'
             placeholder={intl.formatMessage(messages.placeholder)}
-            value={value}
+            value={this.getHashtagPrefix() + value}
             onChange={this.handleChange}
             onKeyUp={this.handleKeyUp}
             onFocus={this.handleFocus}
