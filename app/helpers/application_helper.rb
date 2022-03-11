@@ -139,7 +139,8 @@ module ApplicationHelper
 
   def body_classes
     output = (@body_classes || '').split(' ')
-    output << "app-body"
+    output << "theme-#{current_theme.parameterize}"
+	output << "app-body"
     output << 'system-font' if current_account&.user&.setting_system_font_ui
     output << (current_account&.user&.setting_reduce_motion ? 'reduce-motion' : 'no-reduce-motion')
     output << 'rtl' if locale_direction == 'rtl'
