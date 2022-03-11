@@ -10,6 +10,7 @@ import PublicTimeline from '../features/standalone/public_timeline';
 import HashtagTimeline from '../features/standalone/hashtag_timeline';
 import ModalContainer from '../features/ui/containers/modal_container';
 import initialState from '../initial_state';
+import { Search } from '../features/ui/util/async-components';
 
 const { localeData, messages } = getLocale();
 addLocaleData(localeData);
@@ -45,6 +46,7 @@ export default class TimelineContainer extends React.PureComponent {
 
     return (
       <IntlProvider locale={locale} messages={messages}>
+        <Search	/>
         <Provider store={store}>
           <Fragment>
             {timeline}
