@@ -130,8 +130,8 @@ class SearchResults extends ImmutablePureComponent {
         <div className='search-results__header'>
           <Icon id='search' fixedWidth />
           <FormattedMessage id='search_results.total' defaultMessage='{count, number} {count, plural, one {result} other {results}}' values={{ count }} />
-          <SearchContainerPrefix openInRoute isSuchen />
         </div>
+        <SearchContainerPrefix openInRoute isSuchen />
 
         {accounts}
         {statuses}
