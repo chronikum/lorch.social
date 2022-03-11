@@ -50,7 +50,7 @@ export function submitSearch(tags) {
     console.log('GETTING TAGS: ' + tags);
 	console.log('GETTING PROPS: ' + dispatch);
 	console.log('GETTING STATE: ' + getState);
-    if (tags) {
+    if (tags && tags?.length > 0) {
       value = tags + ' ' + value;
 	  console.log('GETTING VALUE WITH TAGS: ' + value);
     }

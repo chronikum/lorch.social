@@ -23,7 +23,7 @@ const mapDispatchToProps = dispatch => ({
   },
 
   onSubmit (tags) {
-    dispatch(submitSearch(tags));
+    dispatch(submitSearch(tags || ''));
   },
 
   onShow () {
