@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { defineMessages, injectIntl } from 'react-intl';
+import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
 import ImmutablePropTypes from 'react-immutable-proptypes';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 
@@ -241,6 +241,7 @@ class ColumnsArea extends ImmutablePureComponent {
 
           <div className='columns-area__panels__pane columns-area__panels__pane--start columns-area__panels__pane--navigational'>
             <div className='columns-area__panels__pane__inner'>
+              <FormattedMessage id='message-hint' className='sidebar-hint-text' defaultMessage='Hier können Sie einfach auf die neusten Suchen/Finden Angebote zugreifen. Melden Sie sich bei dem Bietenden direkt unter dem Post, dass diese Sie per Direktnachricht kontaktieren können. Nutzen Sie die Suchfunktion mit dem #suche und #biete um direkt und einfach nach bestimmten Dingen zu suchen.' />
               <NavigationPanel />
             </div>
           </div>

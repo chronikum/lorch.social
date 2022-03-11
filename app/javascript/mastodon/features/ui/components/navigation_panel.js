@@ -10,7 +10,6 @@ import TrendsContainer from 'mastodon/features/getting_started/containers/trends
 
 const NavigationPanel = () => (
   <div className='navigation-panel'>
-    <FormattedMessage id='message-hint' className='sidebar-hint-text' defaultMessage='Hier können Sie einfach auf die neusten Suchen/Finden Angebote zugreifen. Melden Sie sich bei dem Bietenden direkt unter dem Post, dass diese Sie per Direktnachricht kontaktieren können. Nutzen Sie die Suchfunktion mit dem #suche und #biete um direkt und einfach nach bestimmten Dingen zu suchen.' />
     <NavLink className='column-link column-link--transparent' to='/timelines/home' data-preview-title-id='column.home' data-preview-icon='home' ><Icon className='column-link__icon' id='home' fixedWidth /><FormattedMessage id='tabs_bar.home' defaultMessage='Home' /></NavLink>
     <NavLink className='column-link column-link--transparent' to='/timelines/tag/Biete'><Icon className='column-link__icon' id='book' fixedWidth /><FormattedMessage id='navigation_bar.biete' defaultMessage='BIETE' /></NavLink>
     <NavLink className='column-link column-link--transparent' to='/timelines/tag/Suche'><Icon className='column-link__icon' id='search' fixedWidth /><FormattedMessage id='navigation_bar.suche' defaultMessage='SUCHE' /></NavLink>
