@@ -47,12 +47,8 @@ export function submitSearch(tags) {
     }
 
     dispatch(fetchSearchRequest());
-    console.log('GETTING TAGS: ' + tags);
-	console.log('GETTING PROPS: ' + dispatch);
-	console.log('GETTING STATE: ' + getState);
     if (tags && tags?.length > 0) {
       value = tags + ' ' + value;
-	  console.log('GETTING VALUE WITH TAGS: ' + value);
     }
     api(getState).get('/api/v2/search', {
       params: {
