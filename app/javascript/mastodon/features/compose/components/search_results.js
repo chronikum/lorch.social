@@ -91,7 +91,6 @@ class SearchResults extends ImmutablePureComponent {
       count   += results.get('statuses').size;
       statuses = (
         <div className='search-results__section'>
-          <span>Testing</span>
           <h5><Icon id='quote-right' fixedWidth /><FormattedMessage id='search_results.statuses' defaultMessage='Toots' /></h5>
 
           {results.get('statuses').map(statusId => <StatusContainer key={statusId} id={statusId} />)}
@@ -130,6 +129,7 @@ class SearchResults extends ImmutablePureComponent {
         <div className='search-results__header'>
           <Icon id='search' fixedWidth />
           <FormattedMessage id='search_results.total' defaultMessage='{count, number} {count, plural, one {result} other {results}}' values={{ count }} />
+          <span>Das ist ein Test</span>
         </div>
 
         {accounts}
