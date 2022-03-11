@@ -56,7 +56,6 @@ class ListEditor extends ImmutablePureComponent {
         <EditListForm />
 
         <Search />
-        <Search />
 
         <div className='drawer__pager'>
           <div className='drawer__inner list-editor__accounts'>
