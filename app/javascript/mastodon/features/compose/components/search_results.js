@@ -130,7 +130,7 @@ class SearchResults extends ImmutablePureComponent {
           <Icon id='search' fixedWidth />
           <FormattedMessage id='search_results.total' defaultMessage='{count, number} {count, plural, one {result} other {results}}' values={{ count }} />
         </div>
-		<p>Test Nachricht</p>
+        <p>Test Nachricht</p>
 
         {accounts}
         {statuses}
