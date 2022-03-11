@@ -32,45 +32,7 @@ export function clearSearch() {
   };
 };
 
-export function submitSearch() {
-  return (dispatch, getState) => {
-    const value = getState().getIn(['search', 'value']);
-
-    if (value.length === 0) {
-      dispatch(fetchSearchSuccess({
-        accounts: [],
-        statuses: [],
-        hashtags: []
-      }, ''));
-      return;
-    }
-
-    dispatch(fetchSearchRequest());
-
-    api(getState).get('/api/v2/search', {
-      params: {
-        q: value,
-        resolve: true,
-        limit: 5,
-      },
-    }).then(response => {
-      if (response.data.accounts) {
-        dispatch(importFetchedAccounts(response.data.accounts));
-      }
-
-      if (response.data.statuses) {
-        dispatch(importFetchedStatuses(response.data.statuses));
-      }
-
-      dispatch(fetchSearchSuccess(response.data, value));
-      dispatch(fetchRelationships(response.data.accounts.map(item => item.id)));
-    }).catch(error => {
-      dispatch(fetchSearchFail(error));
-    });
-  };
-};
-
-export function submitSearchWithTags(tags) {
+export function submitSearch(tags) {
   return (dispatch, getState) => {
     const value = getState().getIn(['search', 'value']);
 
@@ -87,7 +49,7 @@ export function submitSearchWithTags(tags) {
 
     api(getState).get('/api/v2/search', {
       params: {
-        q: value + tags.join(' '),
+        q: value + tags?.join(' '),
         resolve: true,
         limit: 5,
       },
