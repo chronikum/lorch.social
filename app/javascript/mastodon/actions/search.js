@@ -1,18 +1,23 @@
 import api from '../api';
-import { fetchRelationships } from './accounts';
-import { importFetchedAccounts, importFetchedStatuses } from './importer';
+import {
+  fetchRelationships
+} from './accounts';
+import {
+  importFetchedAccounts,
+  importFetchedStatuses
+} from './importer';
 
 export const SEARCH_CHANGE = 'SEARCH_CHANGE';
-export const SEARCH_CLEAR  = 'SEARCH_CLEAR';
-export const SEARCH_SHOW   = 'SEARCH_SHOW';
+export const SEARCH_CLEAR = 'SEARCH_CLEAR';
+export const SEARCH_SHOW = 'SEARCH_SHOW';
 
 export const SEARCH_FETCH_REQUEST = 'SEARCH_FETCH_REQUEST';
 export const SEARCH_FETCH_SUCCESS = 'SEARCH_FETCH_SUCCESS';
-export const SEARCH_FETCH_FAIL    = 'SEARCH_FETCH_FAIL';
+export const SEARCH_FETCH_FAIL = 'SEARCH_FETCH_FAIL';
 
 export const SEARCH_EXPAND_REQUEST = 'SEARCH_EXPAND_REQUEST';
 export const SEARCH_EXPAND_SUCCESS = 'SEARCH_EXPAND_SUCCESS';
-export const SEARCH_EXPAND_FAIL    = 'SEARCH_EXPAND_FAIL';
+export const SEARCH_EXPAND_FAIL = 'SEARCH_EXPAND_FAIL';
 
 export function changeSearch(value) {
   return {
@@ -32,7 +37,11 @@ export function submitSearch() {
     const value = getState().getIn(['search', 'value']);
 
     if (value.length === 0) {
-      dispatch(fetchSearchSuccess({ accounts: [], statuses: [], hashtags: [] }, ''));
+      dispatch(fetchSearchSuccess({
+        accounts: [],
+        statuses: [],
+        hashtags: []
+      }, ''));
       return;
     }
 
@@ -41,6 +50,44 @@ export function submitSearch() {
     api(getState).get('/api/v2/search', {
       params: {
         q: value,
+        resolve: true,
+        limit: 5,
+      },
+    }).then(response => {
+      if (response.data.accounts) {
+        dispatch(importFetchedAccounts(response.data.accounts));
+      }
+
+      if (response.data.statuses) {
+        dispatch(importFetchedStatuses(response.data.statuses));
+      }
+
+      dispatch(fetchSearchSuccess(response.data, value));
+      dispatch(fetchRelationships(response.data.accounts.map(item => item.id)));
+    }).catch(error => {
+      dispatch(fetchSearchFail(error));
+    });
+  };
+};
+
+export function submitSearchWithTags(tags) {
+  return (dispatch, getState) => {
+    const value = getState().getIn(['search', 'value']);
+
+    if (value.length === 0) {
+      dispatch(fetchSearchSuccess({
+        accounts: [],
+        statuses: [],
+        hashtags: [],
+      }, ''));
+      return;
+    }
+
+    dispatch(fetchSearchRequest());
+
+    api(getState).get('/api/v2/search', {
+      params: {
+        q: value + tags.join(' '),
         resolve: true,
         limit: 5,
       },
@@ -83,7 +130,7 @@ export function fetchSearchFail(error) {
 };
 
 export const expandSearch = type => (dispatch, getState) => {
-  const value  = getState().getIn(['search', 'value']);
+  const value = getState().getIn(['search', 'value']);
   const offset = getState().getIn(['search', 'results', type]).size;
 
   dispatch(expandSearchRequest());
@@ -94,7 +141,9 @@ export const expandSearch = type => (dispatch, getState) => {
       type,
       offset,
     },
-  }).then(({ data }) => {
+  }).then(({
+    data
+  }) => {
     if (data.accounts) {
       dispatch(importFetchedAccounts(data.accounts));
     }

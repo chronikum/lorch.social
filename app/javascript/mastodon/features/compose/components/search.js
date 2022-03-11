@@ -88,8 +88,12 @@ class Search extends React.PureComponent {
   handleKeyUp = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-      this.setState( { value : this.getHashtagPrefixwithValue() + e.target.value } );
-      this.props.onSubmit();
+      if (this.props.isSuchen || this.props.isBieten) {
+        this.props.onSubmit(this.getHashtagPrefixwithValue());
+      }
+      else {
+        this.props.onSubmit();
+      }
       if (this.props.openInRoute) {
         this.context.router.history.push('/search');
       }

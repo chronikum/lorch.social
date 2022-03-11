@@ -2,7 +2,7 @@ import { connect } from 'react-redux';
 import {
   changeSearch,
   clearSearch,
-  submitSearch,
+  submitSearchWithTags,
   showSearch,
 } from '../../../actions/search';
 import Search from '../components/search';
@@ -22,8 +22,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(clearSearch());
   },
 
-  onSubmit () {
-    dispatch(submitSearch());
+  onSubmit (tags) {
+    dispatch(submitSearchWithTags(tags));
   },
 
   onShow () {
