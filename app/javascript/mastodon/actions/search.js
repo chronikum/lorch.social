@@ -35,7 +35,7 @@ export function clearSearch() {
 
 export function submitSearch(tags) {
   return (dispatch, getState) => {
-    const value = getState().getIn(['search', 'value']);
+    let value = getState().getIn(['search', 'value']);
 
     if (value.length === 0) {
       dispatch(fetchSearchSuccess({
@@ -50,6 +50,10 @@ export function submitSearch(tags) {
     console.log('GETTING TAGS: ' + tags);
 	console.log('GETTING PROPS: ' + dispatch);
 	console.log('GETTING STATE: ' + getState);
+    if (tags) {
+      value = tags + ' ' + value;
+	  console.log('GETTING VALUE WITH TAGS: ' + value);
+    }
     api(getState).get('/api/v2/search', {
       params: {
         q: value,
