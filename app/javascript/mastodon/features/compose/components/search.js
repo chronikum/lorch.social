@@ -88,9 +88,8 @@ class Search extends React.PureComponent {
   handleKeyUp = (e) => {
     if (e.key === 'Enter') {
       e.preventDefault();
-
+      this.setState( { value : this.getHashtagPrefixwithValue() + e.target.value } );
       this.props.onSubmit();
-
       if (this.props.openInRoute) {
         this.context.router.history.push('/search');
       }
@@ -100,9 +99,6 @@ class Search extends React.PureComponent {
   }
 
   handleFocus = () => {
-    if (this.state.value === '') {
-      this.getHashtagPrefixwithValue();
-    }
     this.setState({ expanded: true });
     this.props.onShow();
 
@@ -119,11 +115,11 @@ class Search extends React.PureComponent {
   }
 
   /**
-   * Adds a hashtag to the value of the search field.
+   * Returns the fitting hashtag for the given search props.
    */
-  getHashtagPrefixwithValue = (value) => {
+  getHashtagPrefixwithValue = () => {
     // eslint-disable-next-line no-nested-ternary
-    this.setState( { value: ((this.props.isSuchen ? '#suchen' : (this.props.isBieten ? '#bieten' : '')) || '') + (value || '') } );
+    return ((this.props.isSuchen ? '#suchen' : (this.props.isBieten ? '#bieten' : '')) || '');
   }
 
   render () {
