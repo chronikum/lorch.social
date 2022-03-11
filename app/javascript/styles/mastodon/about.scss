@@ -7,6 +7,12 @@ $small-breakpoint: 960px;
 	padding: 10px;
 	font-weight: bolder;
 }
+
+.menu-hint-background {
+	background-color: #ffdb1291;
+	color: black;
+	padding: 5px;
+}
 .container {
   box-sizing: border-box;
   max-width: $maximum-width;
