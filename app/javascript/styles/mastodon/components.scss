@@ -2648,8 +2648,8 @@ a.account__display-name {
 
 .drawer__inner__mastodon {
   flex: 1;
-  min-height: 47px;
   display: none;
+  opacity: 0.5;
 
   > img {
     display: block;
