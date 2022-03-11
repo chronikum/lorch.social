@@ -16,8 +16,8 @@ const NavigationPanel = () => (
     <FollowRequestsNavLink />
     <NavLink className='column-link column-link--transparent' to='/favourites'><Icon className='column-link__icon' id='star' fixedWidth /><FormattedMessage id='navigation_bar.favourites' defaultMessage='Favourites' /></NavLink>
     <NavLink className='column-link column-link--transparent' to='/bookmarks'><Icon className='column-link__icon' id='bookmark' fixedWidth /><FormattedMessage id='navigation_bar.bookmarks' defaultMessage='Bookmarks' /></NavLink>
-    <NavLink className='column-link column-link--transparent' to='/timelines/tag/Biete'><Icon className='column-link__icon' id='list-ul' fixedWidth /><FormattedMessage defaultMessage='BIETE' /></NavLink>
-    <NavLink className='column-link column-link--transparent' to='/timelines/tag/Suche'><Icon className='column-link__icon' id='list-ul' fixedWidth /><FormattedMessage defaultMessage='SUCHE' /></NavLink>
+    <NavLink className='column-link column-link--transparent' to='/timelines/tag/Biete'><Icon className='column-link__icon' id='biete-ul' fixedWidth /><FormattedMessage defaultMessage='BIETE' /></NavLink>
+    <NavLink className='column-link column-link--transparent' to='/timelines/tag/Suche'><Icon className='column-link__icon' id='suche-ul' fixedWidth /><FormattedMessage defaultMessage='SUCHE' /></NavLink>
     {profile_directory && <NavLink className='column-link column-link--transparent' to='/directory'><Icon className='column-link__icon' id='address-book-o' fixedWidth /><FormattedMessage id='getting_started.directory' defaultMessage='Profile directory' /></NavLink>}
 
     <ListPanel />
