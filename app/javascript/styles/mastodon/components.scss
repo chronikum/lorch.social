@@ -1,6 +1,11 @@
 .app-body {
   -webkit-overflow-scrolling: touch;
   -ms-overflow-style: -ms-autohiding-scrollbar;
+  background: url(https://lorch.social/lorch-background.svg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: 120% 20%;
 }
 
 .animated-number {
