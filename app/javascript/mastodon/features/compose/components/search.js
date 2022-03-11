@@ -123,7 +123,7 @@ class Search extends React.PureComponent {
    */
   getHashtagPrefixwithValue = () => {
     // eslint-disable-next-line no-nested-ternary
-    return ((this.props.isSuchen ? '#suchen' : (this.props.isBieten ? '#bieten' : '')) || '');
+    return ((this.props.isSuchen ? '#suche' : (this.props.isBieten ? '#biete' : '')) || '');
   }
 
   render () {
