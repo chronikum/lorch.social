@@ -14,8 +14,8 @@ export const links = [
   <NavLink className='tabs-bar__link' exact to='/timelines/public' data-preview-title-id='column.public' data-preview-icon='globe' ><Icon id='globe' fixedWidth /><FormattedMessage id='tabs_bar.federated_timeline' defaultMessage='Federated' /></NavLink>,
   <NavLink className='tabs-bar__link optional' to='/search' data-preview-title-id='tabs_bar.search' data-preview-icon='bell' ><Icon id='search' fixedWidth /><FormattedMessage id='tabs_bar.search' defaultMessage='Search' /></NavLink>,
   <NavLink className='tabs-bar__link' style={{ flexGrow: '0', flexBasis: '30px' }} to='/getting-started' data-preview-title-id='getting_started.heading' data-preview-icon='bars' ><Icon id='bars' fixedWidth /></NavLink>,
-  <NavLink className='tabs-bar__link' to='/timelines/tag/Biete'><Icon className='column-link__icon' id='book' fixedWidth /><FormattedMessage id='tabs_bar.biete' defaultMessage='BIETE' /></NavLink>,
-  <NavLink className='tabs-bar__link' to='/timelines/tag/Suche'><Icon className='column-link__icon' id='search' fixedWidth /><FormattedMessage id='tabs_bar.suche' defaultMessage='SUCHE' /></NavLink>,
+  <NavLink className='tabs-bar__link' to='/timelines/tag/Biete' data-preview-title-id='tabs_bar.search' data-preview-icon='book'><Icon className='column-link__icon' id='book' fixedWidth /><FormattedMessage id='tabs_bar.biete' defaultMessage='BIETE' /></NavLink>,
+  <NavLink className='tabs-bar__link' to='/timelines/tag/Suche' data-preview-title-id='tabs_bar.search' data-preview-icon='search'><Icon className='column-link__icon' id='search' fixedWidth /><FormattedMessage id='tabs_bar.suche' defaultMessage='SUCHE' /></NavLink>,
 ];
 
 export function getIndex (path) {
