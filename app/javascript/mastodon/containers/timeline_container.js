@@ -46,7 +46,6 @@ export default class TimelineContainer extends React.PureComponent {
 
     return (
       <IntlProvider locale={locale} messages={messages}>
-        <Search	/>
         <Provider store={store}>
           <Fragment>
             {timeline}
