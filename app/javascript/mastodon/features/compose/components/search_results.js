@@ -9,7 +9,7 @@ import Hashtag from '../../../components/hashtag';
 import Icon from 'mastodon/components/icon';
 import { searchEnabled } from '../../../initial_state';
 import LoadMore from 'mastodon/components/load_more';
-import SearchContainerPrefix from 'mastodon/features/compose/containers/search_container_prefix';
+import Search from '../components/search';
 
 const messages = defineMessages({
   dismissSuggestion: { id: 'suggestions.dismiss', defaultMessage: 'Dismiss suggestion' },
@@ -130,6 +130,8 @@ class SearchResults extends ImmutablePureComponent {
           <Icon id='search' fixedWidth />
           <FormattedMessage id='search_results.total' defaultMessage='{count, number} {count, plural, one {result} other {results}}' values={{ count }} />
         </div>
+        <p>Test Nachricht</p>
+        <Search />
         <p>Test Nachricht</p>
 
         {accounts}
