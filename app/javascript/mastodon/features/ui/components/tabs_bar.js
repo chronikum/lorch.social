@@ -10,8 +10,8 @@ import NotificationsCounterIcon from './notifications_counter_icon';
 export const links = [
   <NavLink className='tabs-bar__link' to='/timelines/home' data-preview-title-id='column.home' data-preview-icon='home' ><Icon id='home' fixedWidth /><FormattedMessage id='tabs_bar.home' defaultMessage='Home' /></NavLink>,
   <NavLink className='tabs-bar__link optional' to='/search' data-preview-title-id='tabs_bar.search' data-preview-icon='bell' ><Icon id='search' fixedWidth /><FormattedMessage id='tabs_bar.search' defaultMessage='Search' /></NavLink>,
-  <NavLink className='column-link column-link--transparent' to='/timelines/tag/Biete'><Icon className='column-link__icon' id='book' fixedWidth /><FormattedMessage id='navigation_bar.biete' defaultMessage='BIETE' /></NavLink>,
-  <NavLink className='column-link column-link--transparent' to='/timelines/tag/Suche'><Icon className='column-link__icon' id='search' fixedWidth /><FormattedMessage id='navigation_bar.suche' defaultMessage='SUCHE' /></NavLink>,
+  <NavLink className='column-link column-link--transparent' to='/timelines/tag/Biete'><Icon className='column-link__icon' id='book' fixedWidth /><FormattedMessage id='tabs..biete' defaultMessage='BIETE' /></NavLink>,
+  <NavLink className='column-link column-link--transparent' to='/timelines/tag/Suche'><Icon className='column-link__icon' id='search' fixedWidth /><FormattedMessage id='tabs..suche' defaultMessage='SUCHE' /></NavLink>,
   <NavLink className='tabs-bar__link' style={{ flexGrow: '0', flexBasis: '30px' }} to='/getting-started' data-preview-title-id='getting_started.heading' data-preview-icon='bars' ><Icon id='bars' fixedWidth /></NavLink>,
 ];
 
