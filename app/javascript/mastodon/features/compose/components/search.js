@@ -61,6 +61,7 @@ class Search extends React.PureComponent {
     openInRoute: PropTypes.bool,
     intl: PropTypes.object.isRequired,
     singleColumn: PropTypes.bool,
+    isSuchen: PropTypes.bool,
   };
 
   state = {
