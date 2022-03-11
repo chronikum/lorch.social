@@ -139,7 +139,7 @@ class Search extends React.PureComponent {
             ref={this.setRef}
             className='search__input'
             type='text'
-            placeholder={intl.formatMessage(messages.placeholder)}
+            placeholder={(this.props.isSuchen || this.props.isBieten) ? `${this.getHashtagPrefixwithValue()} wird durchsucht` : intl.formatMessage(messages.placeholder)}
             value={value}
             onChange={this.handleChange}
             onKeyUp={this.handleKeyUp}
