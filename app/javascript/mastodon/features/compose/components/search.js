@@ -115,9 +115,9 @@ class Search extends React.PureComponent {
     this.setState({ expanded: false });
   }
 
-  getHashtagPrefix = () => {
+  getHashtagPrefixwithValue = (value) => {
     // eslint-disable-next-line no-nested-ternary
-    return (this.props.isSuchen ? '#suchen' : (this.props.isBieten ? '#bieten' : '#')) || '';
+    return ((this.props.isSuchen ? '#suchen' : (this.props.isBieten ? '#bieten' : '#')) || '') + (value || '');
   }
 
   render () {
@@ -134,7 +134,7 @@ class Search extends React.PureComponent {
             className='search__input'
             type='text'
             placeholder={intl.formatMessage(messages.placeholder)}
-            value={this.getHashtagPrefix() + value}
+            value={this.getHashtagPrefixwithValue(value)}
             onChange={this.handleChange}
             onKeyUp={this.handleKeyUp}
             onFocus={this.handleFocus}
