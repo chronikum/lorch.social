@@ -3,6 +3,10 @@ $fluid-breakpoint: $maximum-width + 20px;
 $column-breakpoint: 700px;
 $small-breakpoint: 960px;
 
+.sidebar-hint-text {
+	padding: 10px;
+	font-weight: bolder;
+}
 .container {
   box-sizing: border-box;
   max-width: $maximum-width;
