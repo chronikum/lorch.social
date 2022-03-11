@@ -121,6 +121,7 @@ class SearchResults extends ImmutablePureComponent {
           {results.get('hashtags').size >= 5 && <LoadMore visible onClick={this.handleLoadMoreHashtags} />}
         </div>
       );
+	  console.log(hashtags);
     }
 
     return (
