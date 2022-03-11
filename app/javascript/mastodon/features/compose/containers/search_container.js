@@ -22,8 +22,8 @@ const mapDispatchToProps = dispatch => ({
     dispatch(clearSearch());
   },
 
-  onSubmit () {
-    dispatch(submitSearch());
+  onSubmit (tags) {
+    dispatch(submitSearch(tags || ''));
   },
 
   onShow () {
