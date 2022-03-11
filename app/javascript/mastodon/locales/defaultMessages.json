@@ -1054,7 +1054,7 @@
         "id": "compose_form.spoiler_placeholder"
       },
       {
-        "defaultMessage": "Toot",
+        "defaultMessage": "Post",
         "id": "compose_form.publish"
       },
       {
