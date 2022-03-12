@@ -55,7 +55,6 @@ const Hashtag = ({ hashtag }) => (
         to={`/timelines/tag/${hashtag.get('name')}`}
       >
         #<span>{hashtag.get('name')}</span>
-        {console.log(hashtag.get('name'))}
       </Permalink>
 
       <ShortNumber
