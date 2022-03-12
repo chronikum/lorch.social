@@ -52,6 +52,7 @@ class SearchResults extends ImmutablePureComponent {
     } else if (value?.toLowerCase().includes('#biete')) {
       return <SearchContainerPrefix isBieten />;
     }
+	return false
   }
 
   render () {
