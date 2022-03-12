@@ -47,16 +47,11 @@ class SearchResults extends ImmutablePureComponent {
   handleLoadMoreHashtags = () => this.props.expandSearch('hashtags');
 
   hasHashTags = (value) => {
-    if (value?.toLowerCase().includes('#biete') && value?.toLowerCase().includes('#biete')) {
-      return '';
-    }
     if (value?.toLowerCase().includes('#suche')) {
-      return '#suche';
+      return <SearchContainerPrefix isSuchen />;
+    } else if (value?.toLowerCase().includes('#biete')) {
+      return <SearchContainerPrefix isBieten />;
     }
-    if (value?.toLowerCase().includes('#biete')) {
-      return '#biete';
-    }
-	 return '';
   }
 
   render () {
@@ -145,14 +140,7 @@ class SearchResults extends ImmutablePureComponent {
             <FormattedMessage id='search_results.total' defaultMessage='{count, number} {count, plural, one {result} other {results}}' values={{ count }} />
           </div>
           <div className='show-search'>
-            {this.hasHashTags(searchTerm) === '#suche'}
-            {
-              <SearchContainerPrefix isSuchen />
-            }
-            {this.hasHashTags(searchTerm) === '#biete'}
-            {
-              <SearchContainerPrefix isBieten />
-            }
+            {this.hasHashTags(searchTerm)}
           </div>
 
           {accounts}
