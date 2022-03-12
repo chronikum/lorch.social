@@ -134,8 +134,6 @@ class SearchResults extends ImmutablePureComponent {
           <div className='show-search'>
             <SearchContainerPrefix openInRoute />
           </div>
-          <p>Test Nachricht</p>
-          <p>Test Nachricht</p>
 
           {accounts}
           {statuses}
