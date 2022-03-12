@@ -3,6 +3,12 @@ $fluid-breakpoint: $maximum-width + 20px;
 $column-breakpoint: 700px;
 $small-breakpoint: 960px;
 
+
+.show-search {
+	.search {
+		display: block !important;
+	}
+}
 .sidebar-hint-text {
 	padding: 10px;
 	font-weight: bolder;

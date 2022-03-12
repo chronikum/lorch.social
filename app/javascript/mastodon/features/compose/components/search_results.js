@@ -131,7 +131,7 @@ class SearchResults extends ImmutablePureComponent {
             <Icon id='search' fixedWidth />
             <FormattedMessage id='search_results.total' defaultMessage='{count, number} {count, plural, one {result} other {results}}' values={{ count }} />
           </div>
-          <div className='compose-panel'>
+          <div className='show-search'>
             <SearchContainerPrefix openInRoute />
           </div>
           <p>Test Nachricht</p>
