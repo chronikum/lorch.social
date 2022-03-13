@@ -238,10 +238,9 @@ class ComposeForm extends ImmutablePureComponent {
     return (<>
       <p>Hier können Sie suchen oder bieten. Drücken Sie auf den entsprechenden Button.</p>
       <div className='compose-form__publish'>
-        <div className='compose-form__publish-button-wrapper'>
-          <Button text={'SUCHEN'} onClick={this.handleSubmitSuchen} disabled={!this.canSubmit()} block /></div>
-        <div className='compose-form__publish-button-wrapper'><Button text={'BIETEN'} onClick={this.handleSubmitBieten} disabled={!this.canSubmit()} block />
-        </div></div><hr /><p>Dies postet ihre Nachricht nur. Sie wird nicht in Suchen oder Bieten einsortiert</p>
+	  <Button text={'SUCHEN'} onClick={this.handleSubmitSuchen} disabled={!this.canSubmit()} block />
+      <Button text={'BIETEN'} onClick={this.handleSubmitBieten} disabled={!this.canSubmit()} block />
+      </div><hr /><p>Dies postet ihre Nachricht nur. Sie wird nicht in Suchen oder Bieten einsortiert</p>
       <div className='compose-form__publish'><Button not_important text={'NUR POSTEN!'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block />
       </div></>);
   }
