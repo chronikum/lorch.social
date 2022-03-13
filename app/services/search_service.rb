@@ -8,6 +8,10 @@ class SearchService < BaseService
     @limit   = limit.to_i
     @offset  = options[:type].blank? ? 0 : options[:offset].to_i
     @resolve = options[:resolve] || false
+	puts("HALLOOOOO")
+	# SELECT text FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', 'Kaffeemaschinen')
+	result = ActiveRecord::Base.connection.execute("SELECT text FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', '#{query}')");
+	puts(result)
     default_results.tap do |results|
       next if @query.blank? || @limit.zero?
       if url_query?
@@ -16,6 +20,9 @@ class SearchService < BaseService
         results[:accounts] = perform_accounts_search! if account_searchable?
         results[:statuses] = perform_statuses_search! if full_text_searchable?
         results[:hashtags] = perform_hashtags_search! if hashtag_searchable?
+		puts("DAS SIND DIE RESULS")
+		puts(results)
+		puts("DAS SIND DIE RESULS")
       end
     end
   end
@@ -50,7 +57,6 @@ class SearchService < BaseService
     account_ids         = results.map(&:account_id)
     account_domains     = results.map(&:account_domain)
     preloaded_relations = relations_map_for_account(@account, account_ids, account_domains)
-
     results.reject { |status| StatusFilter.new(status, @account, preloaded_relations).filtered? }
   rescue Faraday::ConnectionFailed, Parslet::ParseFailed
     []
@@ -86,17 +92,15 @@ class SearchService < BaseService
   end
 
   def full_text_searchable?
-    return false unless Chewy.enabled?
-
-    statuses_search? && !@account.nil? && !((@query.start_with?('#') || @query.include?('@')) && !@query.include?(' '))
+    return true
   end
 
   def account_searchable?
-    account_search? && !(@query.start_with?('#') || (@query.include?('@') && @query.include?(' ')))
+    return true
   end
 
   def hashtag_searchable?
-    hashtag_search? && !@query.include?('@')
+    return true
   end
 
   def account_search?
