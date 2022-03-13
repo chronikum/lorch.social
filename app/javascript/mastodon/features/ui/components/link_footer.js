@@ -55,8 +55,8 @@ class LinkFooter extends React.PureComponent {
         <p>
           <FormattedMessage
             id='getting_started.open_source_notice_updated'
-            defaultMessage='Dieses Projekt ist ein Fork von dem quelloffenem Mastodon und wird ehrenamtlich betreut. Technische Fehler können Sie @admin melden.'
-            values={{ github: <span><a href={source_url} rel='noopener noreferrer' target='_blank'>{repository}</a> (v{version})</span> }}
+            defaultMessage='Dieses Projekt ist ein Fork von dem quelloffenem Mastodon und wird ehrenamtlich betreut. Technische Fehler können Sie {admin} melden. '
+            values={{ admin: <a href='https://lorch.social/web/accounts/107931397142314189'>dem Admin</a> }}
           />
           <FormattedMessage
             id='getting_started.privacy'
