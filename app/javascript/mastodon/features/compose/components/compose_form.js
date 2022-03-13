@@ -110,8 +110,8 @@ class ComposeForm extends ImmutablePureComponent {
 	  this.props.onChange(this.autosuggestTextarea.textarea.value);
     }
 	
-	this.autosuggestTextarea.textarea.value = '#suche ' + this.props.text;
-	this.props.onChange(this.autosuggestTextarea.textarea.value);
+    this.autosuggestTextarea.textarea.value = '#suche ' + this.props.text;
+    this.props.onChange(this.autosuggestTextarea.textarea.value);
 
     if (!this.canSubmit()) {
       return;
@@ -128,7 +128,7 @@ class ComposeForm extends ImmutablePureComponent {
     }
 	
     this.autosuggestTextarea.textarea.value = '#biete ' + this.props.text;
-	this.props.onChange(this.autosuggestTextarea.textarea.value);
+    this.props.onChange(this.autosuggestTextarea.textarea.value);
 
     if (!this.canSubmit()) {
       return;
@@ -226,6 +226,25 @@ class ComposeForm extends ImmutablePureComponent {
 
     this.props.onPickEmoji(position, data, needsSpace);
   }
+  
+  /**
+   * Renders the component which displays the suchen and bieten buttons or, when private message, displays only the
+   * send private message button
+   */
+  suchenAndBietenButtonRender () {
+	if (this.props.privacy === 'private' || this.props.privacy === 'direct') {
+		return <div className='compose-form__publish'><Button not_important text={'Flüstern...'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>;
+	}
+    return (<>
+      <p>Hier können Sie suchen oder bieten. Drücken Sie auf den entsprechenden Button.</p>
+      <div className='compose-form__publish'>
+        <div className='compose-form__publish-button-wrapper'>
+          <Button text={'SUCHEN'} onClick={this.handleSubmitSuchen} disabled={!this.canSubmit()} block /></div>
+        <div className='compose-form__publish-button-wrapper'><Button text={'BIETEN'} onClick={this.handleSubmitBieten} disabled={!this.canSubmit()} block />
+        </div></div><hr /><p>Dies postet ihre Nachricht nur. Sie wird nicht in Suchen oder Bieten einsortiert</p>
+      <div className='compose-form__publish'><Button not_important text={'NUR POSTEN!'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block />
+      </div></>);
+  }
 
   render () {
     const { intl, onPaste, showSearch } = this.props;
@@ -295,16 +314,7 @@ class ComposeForm extends ImmutablePureComponent {
           <div className='character-counter__wrapper'><CharacterCounter max={5000} text={this.getFulltextForCharacterCounting()} /></div>
         </div>
         <div className='button-background-posting'>
-          <p>Hier können Sie suchen oder bieten. Drücken Sie auf den entsprechenden Button.</p>
-          <div className='compose-form__publish'>
-            <div className='compose-form__publish-button-wrapper'><Button text={'SUCHEN'} onClick={this.handleSubmitSuchen} disabled={!this.canSubmit()} block /></div>
-            <div className='compose-form__publish-button-wrapper'><Button text={'BIETEN'} onClick={this.handleSubmitBieten} disabled={!this.canSubmit()} block /></div>
-          </div>
-          <hr />
-          <p>Dies postet ihre Nachricht nur. Sie wird nicht in Suchen oder Bieten einsortiert</p>
-          <div className='compose-form__publish'>
-            <Button not_important text={'NUR POSTEN!'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block />
-          </div>
+          {this.suchenAndBietenButtonRender()}
         </div>
       </div>
     );
