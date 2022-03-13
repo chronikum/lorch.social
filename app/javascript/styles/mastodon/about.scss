@@ -40,6 +40,11 @@ $small-breakpoint: 960px;
 .white-background {
 	background-color: white;
 }
+
+.black-background {
+	background-color: black;
+	color: white
+}
 // Emojii Symbol ausblenden
 #mastodon > div > div > div.columns-area__panels > div.columns-area__panels__pane.columns-area__panels__pane--compositional > div > div > div.compose-form > div.compose-form__autosuggest-wrapper > div.emoji-picker-dropdown > div > img {
 	display: none;

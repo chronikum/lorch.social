@@ -278,6 +278,25 @@ class Status extends ImmutablePureComponent {
   handleRef = c => {
     this.node = c;
   }
+  
+  
+  /**
+   * Returns true if a message is public visible
+   * @returns boolean
+   */
+  isMessagePublic = () => {
+	  const visibility = this.props.status.get('visibility');
+	  if (visibility === 'public') return true;
+	  return false;
+  }
+  
+  /**
+   * Renders hint if necessary
+   */
+  renderDirectOrPrivateMessageHint = () => {
+	  if (this.isMessagePublic()) return null;
+	  return <div className='black-background'>🔒 Direktnachricht an dich von</div>;
+  }
 
   render () {
     let media = null;
@@ -463,7 +482,6 @@ class Status extends ImmutablePureComponent {
       <HotKeys handlers={handlers}>
         <div className={classNames('status__wrapper', `status__wrapper-${status.get('visibility')}`, { 'status__wrapper-reply': !!status.get('in_reply_to_id'), unread, focusable: !this.props.muted })} tabIndex={this.props.muted ? null : 0} data-featured={featured ? 'true' : null} aria-label={textForScreenReader(intl, status, rebloggedByText)} ref={this.handleRef}>
           {prepend}
-
           <div className={classNames('status', `status-${status.get('visibility')}`, { 'status-reply': !!status.get('in_reply_to_id'), muted: this.props.muted })} data-id={status.get('id')}>
             <div className='status__expand' onClick={this.handleExpandClick} role='presentation' />
             <div className='status__info'>
@@ -477,6 +495,7 @@ class Status extends ImmutablePureComponent {
                   {statusAvatar}
                 </div>
 
+                {this.renderDirectOrPrivateMessageHint()}
                 <DisplayName account={status.get('account')} others={otherAccounts} />
               </a>
             </div>
