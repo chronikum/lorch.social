@@ -86,7 +86,7 @@ class ComposeForm extends ImmutablePureComponent {
     const { isSubmitting, isChangingUpload, isUploading, anyMedia } = this.props;
     const fulltext = this.getFulltextForCharacterCounting();
     const isOnlyWhitespace = fulltext.length !== 0 && fulltext.trim().length === 0;
-
+	if (length(fulltext) === 0) return false;
     return !(isSubmitting || isUploading || isChangingUpload || length(fulltext) > 5000 || (isOnlyWhitespace && !anyMedia));
   }
 
@@ -111,13 +111,13 @@ class ComposeForm extends ImmutablePureComponent {
 	  this.props.onChange(this.autosuggestTextarea.textarea.value);
     }
 	
-    this.autosuggestTextarea.textarea.value = '#suche ' + this.props.text;
-    this.props.onChange(this.autosuggestTextarea.textarea.value);
-
+	
     if (!this.canSubmit()) {
-      return;
+		return;
     }
-
+	
+	this.autosuggestTextarea.textarea.value = '#suche ' + this.props.text;
+	this.props.onChange(this.autosuggestTextarea.textarea.value);
     this.props.onSubmit(this.context.router ? this.context.router.history : null);
   }
   
@@ -128,13 +128,13 @@ class ComposeForm extends ImmutablePureComponent {
       this.props.onChange(this.autosuggestTextarea.textarea.value);
     }
 	
-    this.autosuggestTextarea.textarea.value = '#biete ' + this.props.text;
-    this.props.onChange(this.autosuggestTextarea.textarea.value);
-
+	
     if (!this.canSubmit()) {
-      return;
+		return;
     }
-
+	
+	this.autosuggestTextarea.textarea.value = '#biete ' + this.props.text;
+	this.props.onChange(this.autosuggestTextarea.textarea.value);
     this.props.onSubmit(this.context.router ? this.context.router.history : null);
   }
 
