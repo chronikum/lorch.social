@@ -33,7 +33,7 @@ class SearchService < BaseService
   end
 
   def perform_statuses_search!
-    definition = parsed_query.apply(StatusesIndex.filter(term: { searchable_by: @account.id }))
+    definition = parsed_query.apply(StatusesIndex.filter(term: { }))
 
     if @options[:min_id].present? || @options[:max_id].present?
       range      = {}
