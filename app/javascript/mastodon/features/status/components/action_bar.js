@@ -165,6 +165,13 @@ class ActionBar extends React.PureComponent {
   handleEmbed = () => {
     this.props.onEmbed(this.props.status);
   }
+  
+  /*
+    Show interest in post and write an reply
+  */
+  showInteresse = () => {
+    console.log('Show interest!')
+  }
 
   handleCopy = () => {
     const url      = this.props.status.get('url');

@@ -25,8 +25,8 @@ const mapStateToProps = state => ({
   isUploading: state.getIn(['compose', 'is_uploading']),
   showSearch: state.getIn(['search', 'submitted']) && !state.getIn(['search', 'hidden']),
   anyMedia: state.getIn(['compose', 'media_attachments']).size > 0,
+  isReplying: state.getIn(['compose', 'in_reply_to']),
 });
-
 const mapDispatchToProps = (dispatch) => ({
 
   onChange (text) {

@@ -229,12 +229,15 @@ class ComposeForm extends ImmutablePureComponent {
   
   /**
    * Renders the component which displays the suchen and bieten buttons or, when private message, displays only the
-   * send private message button
+   * send private message button or adds a "replying" button when replying to a public post
    */
   suchenAndBietenButtonRender () {
-	if (this.props.privacy === 'private' || this.props.privacy === 'direct') {
-		return <div className='compose-form__publish'><Button not_important text={'Flüstern...'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>;
-	}
+    if (this.props.isReplying) {
+      return <div className='compose-form__publish'><Button not_important text={'Antworten'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>;
+    }
+    if (this.props.privacy === 'private' || this.props.privacy === 'direct') {
+      return <div className='compose-form__publish'><Button not_important text={'Flüstern...'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>;
+    }
     return (<>
       <p>Hier können Sie suchen oder bieten. Drücken Sie auf den entsprechenden Button.</p>
       <div className='compose-form__publish'>
