@@ -3,6 +3,18 @@ $fluid-breakpoint: $maximum-width + 20px;
 $column-breakpoint: 700px;
 $small-breakpoint: 960px;
 
+
+.bigger-text {
+	font-size: 1.2em;
+}
+
+.white-background {
+	background-color: white;
+}
+// Emojii Symbol ausblenden
+#mastodon > div > div > div.columns-area__panels > div.columns-area__panels__pane.columns-area__panels__pane--compositional > div > div > div.compose-form > div.compose-form__autosuggest-wrapper > div.emoji-picker-dropdown > div > img {
+	display: none;
+}
 // Lorcher Wappen
 .lorcher-wappen {
 	height: 150px;

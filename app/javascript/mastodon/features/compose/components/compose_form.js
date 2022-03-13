@@ -239,7 +239,8 @@ class ComposeForm extends ImmutablePureComponent {
     }
 
     return (
-      <div className='compose-form'>
+      <div className='compose-form padding'>
+        <h1 className='bigger-text white-background padding'>Angebot erstellen oder etwas suchen</h1>
         <WarningContainer />
 
         <ReplyIndicatorContainer />

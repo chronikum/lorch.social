@@ -6,6 +6,10 @@
   @return '%23' + unquote($color);
 }
 
+.padding {
+	padding: 5px;
+}
+
 body {
   font-family: $font-sans-serif, sans-serif;
   background: #FFEEC0;
