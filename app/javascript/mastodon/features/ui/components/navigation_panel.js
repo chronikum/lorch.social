@@ -27,7 +27,7 @@ const NavigationPanel = () => (
 
     <a className='column-link column-link--transparent' href='/settings/preferences'><Icon className='column-link__icon' id='cog' fixedWidth /><FormattedMessage id='navigation_bar.preferences' defaultMessage='Preferences' /></a>
     <a className='column-link column-link--transparent' href='/relationships'><Icon className='column-link__icon' id='users' fixedWidth /><FormattedMessage id='navigation_bar.follows_and_followers' defaultMessage='Follows and followers' /></a>
-
+    <img className='lorcher-wappen' alt='Lorcher Wappen' src='/lorcher_wappen.svg' />
     {showTrends && <div className='flex-spacer' />}
     {showTrends && <TrendsContainer />}
   </div>
