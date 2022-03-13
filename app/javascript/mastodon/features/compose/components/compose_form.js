@@ -8,7 +8,7 @@ import AutosuggestTextarea from '../../../components/autosuggest_textarea';
 import AutosuggestInput from '../../../components/autosuggest_input';
 import PollButtonContainer from '../containers/poll_button_container';
 import UploadButtonContainer from '../containers/upload_button_container';
-import { defineMessages, injectIntl } from 'react-intl';
+import { defineMessages, FormattedMessage, injectIntl } from 'react-intl';
 import SpoilerButtonContainer from '../containers/spoiler_button_container';
 import PrivacyDropdownContainer from '../containers/privacy_dropdown_container';
 import EmojiPickerDropdown from '../containers/emoji_picker_dropdown_container';
@@ -259,9 +259,17 @@ class ComposeForm extends ImmutablePureComponent {
           </div>
           <div className='character-counter__wrapper'><CharacterCounter max={5000} text={this.getFulltextForCharacterCounting()} /></div>
         </div>
-
-        <div className='compose-form__publish'>
-          <div className='compose-form__publish-button-wrapper'><Button text={publishText} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>
+        <div className='button-background-posting'>
+          <p>Hier können Sie suchen oder bieten. Drücken Sie auf den entsprechenden Button.</p>
+          <div className='compose-form__publish'>
+            <div className='compose-form__publish-button-wrapper'><Button text={'SUCHEN'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>
+            <div className='compose-form__publish-button-wrapper'><Button text={'BIETEN'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>
+          </div>
+          <hr />
+          <p>Dies postet ihre Nachricht nur. Sie wird nicht in Suchen oder Bieten einsortiert</p>
+          <div className='compose-form__publish'>
+            <Button not_important text={'NUR POSTEN!'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block />
+          </div>
         </div>
       </div>
     );

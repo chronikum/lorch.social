@@ -4,6 +4,15 @@ $column-breakpoint: 700px;
 $small-breakpoint: 960px;
 
 
+.button-background-posting {
+	background-color: white;
+	padding: 15px
+}
+.button--not-important {
+	background-color: gray;	
+	max-width: 200px;
+}
+
 .show-search {
 	.search {
 		display: block !important;

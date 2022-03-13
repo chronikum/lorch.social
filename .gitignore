@@ -68,3 +68,5 @@ docker-compose.override.yml
 .dccache
 dump.rdb
 logfile
+app/javascript/mastodon/features/compose/components/compose_form.js
+Gemfile.lock

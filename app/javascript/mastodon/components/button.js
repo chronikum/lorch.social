@@ -8,6 +8,7 @@ export default class Button extends React.PureComponent {
     text: PropTypes.node,
     onClick: PropTypes.func,
     disabled: PropTypes.bool,
+	not_important: PropTypes.bool,
     block: PropTypes.bool,
     secondary: PropTypes.bool,
     className: PropTypes.string,
@@ -33,6 +34,7 @@ export default class Button extends React.PureComponent {
     const className = classNames('button', this.props.className, {
       'button-secondary': this.props.secondary,
       'button--block': this.props.block,
+	  'button--not-important': this.props.not_important,
     });
 
     return (
