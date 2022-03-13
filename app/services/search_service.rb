@@ -8,10 +8,8 @@ class SearchService < BaseService
     @limit   = limit.to_i
     @offset  = options[:type].blank? ? 0 : options[:offset].to_i
     @resolve = options[:resolve] || false
-
     default_results.tap do |results|
       next if @query.blank? || @limit.zero?
-
       if url_query?
         results.merge!(url_resource_results) unless url_resource.nil? || @offset.positive? || (@options[:type].present? && url_resource_symbol != @options[:type].to_sym)
       elsif @query.present?
@@ -37,10 +35,6 @@ class SearchService < BaseService
   def perform_statuses_search!
     definition = parsed_query.apply(StatusesIndex.filter(term: { searchable_by: @account.id }))
 
-    if @options[:account_id].present?
-      definition = definition.filter(term: { account_id: @options[:account_id] })
-    end
-
     if @options[:min_id].present? || @options[:max_id].present?
       range      = {}
       range[:gt] = @options[:min_id].to_i if @options[:min_id].present?
@@ -53,7 +47,7 @@ class SearchService < BaseService
     account_domains     = results.map(&:account_domain)
     preloaded_relations = relations_map_for_account(@account, account_ids, account_domains)
 
-    # results.reject { |status| StatusFilter.new(status, @account, preloaded_relations).filtered? }
+    results.reject { |status| StatusFilter.new(status, @account, preloaded_relations).filtered? }
   rescue Faraday::ConnectionFailed, Parslet::ParseFailed
     []
   end
