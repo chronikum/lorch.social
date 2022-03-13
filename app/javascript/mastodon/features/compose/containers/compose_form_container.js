@@ -10,6 +10,9 @@ import {
   insertEmojiCompose,
   uploadCompose,
 } from '../../../actions/compose';
+import { makeGetStatus } from '../../../selectors';
+
+const getStatus = makeGetStatus();
 
 const mapStateToProps = state => ({
   text: state.getIn(['compose', 'text']),
@@ -26,6 +29,7 @@ const mapStateToProps = state => ({
   showSearch: state.getIn(['search', 'submitted']) && !state.getIn(['search', 'hidden']),
   anyMedia: state.getIn(['compose', 'media_attachments']).size > 0,
   isReplying: state.getIn(['compose', 'in_reply_to']),
+  status: getStatus(state, { id: state.getIn(['compose', 'in_reply_to']) }),
 });
 const mapDispatchToProps = (dispatch) => ({
 

@@ -20,6 +20,7 @@ import ImmutablePureComponent from 'react-immutable-pure-component';
 import { length } from 'stringz';
 import { countableText } from '../util/counter';
 import Icon from 'mastodon/components/icon';
+import { makeGetStatus } from '../../../selectors';
 
 const allowedAroundShortCode = '><\u0085\u0020\u00a0\u1680\u2000\u2001\u2002\u2003\u2004\u2005\u2006\u2007\u2008\u2009\u200a\u202f\u205f\u3000\u2028\u2029\u0009\u000a\u000b\u000c\u000d';
 
@@ -228,6 +229,21 @@ class ComposeForm extends ImmutablePureComponent {
   }
   
   /**
+   * Returns title for current action visible
+   * @returns appropiate title
+   */
+  titleForCurrentComposeAction = () => {
+	  if (this.props.privacy === 'private' || this.props.privacy === 'direct') {
+		  return 'Direktnachricht schreiben';
+	  }
+	  if (this.props.isReplying) {
+		  const statusUsername = this.props.status.get('account').get('username') || 'User';
+		  return `Interesse äußern oder eine Antwort an ${statusUsername} schreiben`;
+	  }
+	  return 'Angebot erstellen oder etwas suchen';
+  }
+  
+  /**
    * Renders the component which displays the suchen and bieten buttons or, when private message, displays only the
    * send private message button or adds a "replying" button when replying to a public post
    */
@@ -261,10 +277,10 @@ class ComposeForm extends ImmutablePureComponent {
 
     return (
       <div className='compose-form padding'>
-        <h1 className='bigger-text white-background padding'>Angebot erstellen oder etwas suchen</h1>
+        <ReplyIndicatorContainer />
+        <h1 className='bigger-text white-background padding'>{this.titleForCurrentComposeAction()}</h1>
         <WarningContainer />
 
-        <ReplyIndicatorContainer />
 
         <div className={`spoiler-input ${this.props.spoiler ? 'spoiler-input--visible' : ''}`} ref={this.setRef}>
           <AutosuggestInput
