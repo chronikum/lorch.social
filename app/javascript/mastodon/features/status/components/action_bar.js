@@ -170,7 +170,9 @@ class ActionBar extends React.PureComponent {
     Show interest in post and write an reply
   */
   showInteresse = () => {
-    console.log('Show interest!')
+	const { status, onUnblockDomain } = this.props;
+    const account = status.get('account');
+	
   }
 
   handleCopy = () => {
@@ -287,7 +289,7 @@ class ActionBar extends React.PureComponent {
         <div className='detailed-status__button'><IconButton className='star-icon' animate active={status.get('favourited')} title={intl.formatMessage(messages.favourite)} icon='star' onClick={this.handleFavouriteClick} /></div>
         {shareButton}
         <div className='detailed-status__button'><IconButton className='bookmark-icon' active={status.get('bookmarked')} title={intl.formatMessage(messages.bookmark)} icon='bookmark' onClick={this.handleBookmarkClick} /></div>
-        {this.props.showInterest ? <div className='detailed-status__button'>INTERESSE</div> : ''}
+        {this.props.showInterest ? <div className='detailed-status__button interested-button' onClick={this.handleReplyClick}>INTERESSE</div> : ''}
         <div className='detailed-status__action-bar-dropdown'>
           <DropdownMenuContainer size={18} icon='ellipsis-h' status={status} items={menu} direction='left' title={intl.formatMessage(messages.more)} />
         </div>

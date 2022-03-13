@@ -4,6 +4,16 @@ $column-breakpoint: 700px;
 $small-breakpoint: 960px;
 
 
+.interested-button {
+	background: lighten($ui-base-color, 4%);
+	&:active,
+	&:focus,
+	&:hover {
+		background-color: lighten($ui-base-color, 10%);
+		transition: all 200ms ease-out;
+	}
+}
+
 .open-detailed-status-button {
 	text-decoration: none;
 	color: black;
