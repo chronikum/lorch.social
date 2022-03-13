@@ -295,7 +295,7 @@ class Status extends ImmutablePureComponent {
    */
   renderDirectOrPrivateMessageHint = () => {
 	  if (this.isMessagePublic()) return null;
-	  return <div className='black-background'>🔒 Direktnachricht an dich von</div>;
+	  return <div className='black-background'>🔒 Direktnachricht</div>;
   }
 
   render () {
