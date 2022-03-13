@@ -4,6 +4,17 @@ $column-breakpoint: 700px;
 $small-breakpoint: 960px;
 
 
+.full-width {
+	width: 100%;
+}
+.centered {
+	text-align: center;
+}
+
+.body > div.container-alt {
+	background-color: white;	
+}
+
 .bigger-text {
 	font-size: 1.2em;
 }

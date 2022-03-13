@@ -9,6 +9,34 @@
   }
 }
 
+.container-alt-auth {
+	width: 700px;
+	margin: 0 auto;
+	margin-top: 40px;
+	background-color: white;
+	h1 {
+		color: black;
+	}
+	
+	span {
+		color: black;
+	}
+	
+	p {
+		color: black;
+	}
+	
+	.simple_form .input.with_label .label_input > label {
+		color: gray
+	}
+  
+	@media screen and (max-width: 740px) {
+	  width: 100%;
+	  margin: 0;
+	  background-color: white;
+	}
+  }
+
 .container-alt-centered {
 	width: 700px;
 	margin: 0 auto;
