@@ -34,7 +34,7 @@ export default class NavigationBar extends ImmutablePureComponent {
 
         <div className='navigation-bar__actions'>
           <IconButton className='close' title='' icon='close' onClick={this.props.onClose} />
-          <ActionBar account={this.props.account} onLogout={this.props.onLogout} />
+          <ActionBar account={this.props.account} onLogout={this.props.onLogout} showInterest />
         </div>
       </div>
     );

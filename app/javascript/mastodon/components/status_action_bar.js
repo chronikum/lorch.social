@@ -8,6 +8,7 @@ import { defineMessages, injectIntl } from 'react-intl';
 import ImmutablePureComponent from 'react-immutable-pure-component';
 import { me, isStaff } from '../initial_state';
 import classNames from 'classnames';
+import { NavLink } from 'react-router-dom';
 
 const messages = defineMessages({
   delete: { id: 'status.delete', defaultMessage: 'Delete' },
@@ -78,6 +79,7 @@ class StatusActionBar extends ImmutablePureComponent {
     withDismiss: PropTypes.bool,
     scrollKey: PropTypes.string,
     intl: PropTypes.object.isRequired,
+    showInterest: PropTypes.bool,
   };
 
   // Avoid checking props that are functions (and whose equality will always
@@ -103,6 +105,14 @@ class StatusActionBar extends ImmutablePureComponent {
     }).catch((e) => {
       if (e.name !== 'AbortError') console.error(e);
     });
+  }
+  
+  /**
+   * Renders the NavLink to the detailed view of the status
+   */
+  renderOpenDetailedViewButton = () => {
+	const routerLink = `/statuses/${this.props.status.get('id')}`;
+	return (<NavLink className='open-detailed-status-button' to={routerLink} >Anzeigen</NavLink>);
   }
 
   handleFavouriteClick = () => {
@@ -326,7 +336,8 @@ class StatusActionBar extends ImmutablePureComponent {
         <IconButton className='status__action-bar-button' title={replyTitle} icon={status.get('in_reply_to_account_id') === status.getIn(['account', 'id']) ? 'reply' : replyIcon} onClick={this.handleReplyClick} counter={status.get('replies_count')} obfuscateCount />
         <IconButton className={classNames('status__action-bar-button', { reblogPrivate })} disabled={!publicStatus && !reblogPrivate}  active={status.get('reblogged')} pressed={status.get('reblogged')} title={reblogTitle} icon='retweet' onClick={this.handleReblogClick} />
         <IconButton className='status__action-bar-button star-icon' animate active={status.get('favourited')} pressed={status.get('favourited')} title={intl.formatMessage(messages.favourite)} icon='star' onClick={this.handleFavouriteClick} />
-
+        {/* eslint-disable-next-line jsx-a11y/no-static-element-interactions */}
+        {this.props.showInterest ? this.renderOpenDetailedViewButton() : ''}
         {shareButton}
 
         <div className='status__action-bar-dropdown'>

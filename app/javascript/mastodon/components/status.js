@@ -485,7 +485,7 @@ class Status extends ImmutablePureComponent {
 
             {media}
 
-            <StatusActionBar scrollKey={scrollKey} status={status} account={account} {...other} />
+            <StatusActionBar scrollKey={scrollKey} status={status} account={account} {...other} showInterest />
           </div>
         </div>
       </HotKeys>
