@@ -102,6 +102,40 @@ class ComposeForm extends ImmutablePureComponent {
 
     this.props.onSubmit(this.context.router ? this.context.router.history : null);
   }
+  
+  handleSubmitSuchen = () => {
+    if (this.props.text !== this.autosuggestTextarea.textarea.value) {
+      // Something changed the text inside the textarea (e.g. browser extensions like Grammarly)
+      // Update the state to match the current text
+	  this.props.onChange(this.autosuggestTextarea.textarea.value);
+    }
+	
+	this.autosuggestTextarea.textarea.value = '#suche ' + this.props.text;
+	this.props.onChange(this.autosuggestTextarea.textarea.value);
+
+    if (!this.canSubmit()) {
+      return;
+    }
+
+    this.props.onSubmit(this.context.router ? this.context.router.history : null);
+  }
+  
+  handleSubmitBieten = () => {
+    if (this.props.text !== this.autosuggestTextarea.textarea.value) {
+      // Something changed the text inside the textarea (e.g. browser extensions like Grammarly)
+      // Update the state to match the current text
+      this.props.onChange(this.autosuggestTextarea.textarea.value);
+    }
+	
+    this.autosuggestTextarea.textarea.value = '#biete ' + this.props.text;
+	this.props.onChange(this.autosuggestTextarea.textarea.value);
+
+    if (!this.canSubmit()) {
+      return;
+    }
+
+    this.props.onSubmit(this.context.router ? this.context.router.history : null);
+  }
 
   onSuggestionsClearRequested = () => {
     this.props.onClearSuggestions();
@@ -262,8 +296,8 @@ class ComposeForm extends ImmutablePureComponent {
         <div className='button-background-posting'>
           <p>Hier können Sie suchen oder bieten. Drücken Sie auf den entsprechenden Button.</p>
           <div className='compose-form__publish'>
-            <div className='compose-form__publish-button-wrapper'><Button text={'SUCHEN'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>
-            <div className='compose-form__publish-button-wrapper'><Button text={'BIETEN'} onClick={this.handleSubmit} disabled={!this.canSubmit()} block /></div>
+            <div className='compose-form__publish-button-wrapper'><Button text={'SUCHEN'} onClick={this.handleSubmitSuchen} disabled={!this.canSubmit()} block /></div>
+            <div className='compose-form__publish-button-wrapper'><Button text={'BIETEN'} onClick={this.handleSubmitBieten} disabled={!this.canSubmit()} block /></div>
           </div>
           <hr />
           <p>Dies postet ihre Nachricht nur. Sie wird nicht in Suchen oder Bieten einsortiert</p>
