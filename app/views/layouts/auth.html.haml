@@ -14,7 +14,7 @@
     .rich-formatting-centered
       %p= 'Sie haben noch keinen Account? Das ist kein Problem:'
     %button.button.centered.full-width.primary-button
-      %span{href: '#', onclick: 'redirectToSignUp()'} Jetzt registrieren
+      %span{href: '#', onclick: 'redirectToSignUp()', 'unsafe-inline': true} Jetzt registrieren
     :javascript
       function redirectToSignUp() {		  			
         window.location.href = "/auth/sign_up"
