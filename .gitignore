@@ -70,3 +70,5 @@ dump.rdb
 logfile
 app/javascript/mastodon/features/compose/components/compose_form.js
 Gemfile.lock
+app/javascript/mastodon/actions/importer/normalizer.js
+env.testingaround
