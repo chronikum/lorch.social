@@ -10,8 +10,6 @@ class Api::V2::SearchController < Api::BaseController
   # search hook is here
   def index
     @search = Search.new(search_results)
-	puts("RESULT")
-	puts(@search.to_json)
     render json: @search, serializer: REST::SearchSerializer
   end
 
