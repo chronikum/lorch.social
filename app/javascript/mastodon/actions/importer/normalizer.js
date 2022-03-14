@@ -44,6 +44,7 @@ export function normalizeAccount(account) {
 
 export function normalizeStatus(status, normalOldStatus) {
   const normalStatus   = { ...status };
+  console.log(normalStatus)
   normalStatus.account = status.account.id;
 
   if (status.reblog && status.reblog.id) {
@@ -79,7 +80,7 @@ export function normalizeStatus(status, normalOldStatus) {
     normalStatus.spoilerHtml  = emojify(escapeTextContentForBrowser(spoilerText), emojiMap);
     normalStatus.hidden       = expandSpoilers ? false : spoilerText.length > 0 || normalStatus.sensitive;
   }
-
+  console.log(normalStatus)
   return normalStatus;
 }
 

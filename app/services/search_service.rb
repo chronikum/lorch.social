@@ -25,7 +25,7 @@ class SearchService < BaseService
   end
   
   def search_word(keyword)
-	results = ActiveRecord::Base.connection.execute("SELECT * FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', '#{keyword}')");
+	results = ActiveRecord::Base.connection.execute("SELECT * FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', '#{keyword}') AND visibility = 0");
 	
 	if results.present?
 		puts("PRINTING RESULTS")
