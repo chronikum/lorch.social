@@ -18,7 +18,7 @@ class SearchService < BaseService
       elsif @query.present?
         results[:accounts] = perform_accounts_search!
         results[:statuses] = perform_statuses_search!
-		results[:more] = fulltext
+		results[:more] = perform_full_text_search!
         results[:hashtags] = perform_hashtags_search!
       end
     end
@@ -52,6 +52,29 @@ class SearchService < BaseService
 
   def perform_statuses_search!
     definition = parsed_query.apply(StatusesIndex.filter(term: { searchable_by: @account.id }))
+
+    if @options[:account_id].present?
+      definition = definition.filter(term: { account_id: @options[:account_id] })
+    end
+
+    if @options[:min_id].present? || @options[:max_id].present?
+      range      = {}
+      range[:gt] = @options[:min_id].to_i if @options[:min_id].present?
+      range[:lt] = @options[:max_id].to_i if @options[:max_id].present?
+      definition = definition.filter(range: { id: range })
+    end
+
+    results             = definition.limit(@limit).offset(@offset).objects.compact
+    account_ids         = results.map(&:account_id)
+    account_domains     = results.map(&:account_domain)
+    preloaded_relations = relations_map_for_account(@account, account_ids, account_domains)
+    results.reject { |status| StatusFilter.new(status, @account, preloaded_relations).filtered? }
+  rescue Faraday::ConnectionFailed, Parslet::ParseFailed
+    []
+  end
+  
+  def perform_full_text_search!
+    definition = parsed_query.apply(StatusesIndex)
 
     if @options[:account_id].present?
       definition = definition.filter(term: { account_id: @options[:account_id] })
