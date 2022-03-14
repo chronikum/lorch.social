@@ -9,22 +9,32 @@ class SearchService < BaseService
     @offset  = options[:type].blank? ? 0 : options[:offset].to_i
     @resolve = options[:resolve] || false
 	puts("HALLOOOOO")
+	search_word(query)
 	# SELECT text FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', 'Kaffeemaschinen')
-	result = ActiveRecord::Base.connection.execute("SELECT text FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', '#{query}')");
-	puts(result)
     default_results.tap do |results|
       next if @query.blank? || @limit.zero?
       if url_query?
         results.merge!(url_resource_results) unless url_resource.nil? || @offset.positive? || (@options[:type].present? && url_resource_symbol != @options[:type].to_sym)
       elsif @query.present?
-        results[:accounts] = perform_accounts_search! if account_searchable?
-        results[:statuses] = perform_statuses_search! if full_text_searchable?
-        results[:hashtags] = perform_hashtags_search! if hashtag_searchable?
-		puts("DAS SIND DIE RESULS")
-		puts(results)
-		puts("DAS SIND DIE RESULS")
+        results[:accounts] = perform_accounts_search!
+        results[:statuses] = perform_statuses_search!
+        results[:hashtags] = perform_hashtags_search!
       end
     end
+  end
+  
+  def search_word(keyword)
+	results = ActiveRecord::Base.connection.execute("SELECT * FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', '#{keyword}')");
+	
+	if results.present?
+		puts("PRINTING RESULTS")
+		results.each do |result|
+			puts(result.to_json)
+		end
+	  return results
+	else
+	  return nil
+	end
   end
 
   private
