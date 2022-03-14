@@ -7,9 +7,11 @@ class Api::V2::SearchController < Api::BaseController
 
   before_action -> { doorkeeper_authorize! :read, :'read:search' }
   before_action :require_user!
-
+  # search hook is here
   def index
     @search = Search.new(search_results)
+	puts("RESULT")
+	puts(@search.to_json)
     render json: @search, serializer: REST::SearchSerializer
   end
 

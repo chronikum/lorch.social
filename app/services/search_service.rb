@@ -9,7 +9,7 @@ class SearchService < BaseService
     @offset  = options[:type].blank? ? 0 : options[:offset].to_i
     @resolve = options[:resolve] || false
 	puts("HALLOOOOO")
-	search_word(query)
+	fulltext = search_word(query)
 	# SELECT text FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', 'Kaffeemaschinen')
     default_results.tap do |results|
       next if @query.blank? || @limit.zero?
@@ -18,9 +18,7 @@ class SearchService < BaseService
       elsif @query.present?
         results[:accounts] = perform_accounts_search!
         results[:statuses] = perform_statuses_search!
-		results[:statuses].each do |result|
-			puts(result.to_json)
-		end
+		results[:more] = fulltext
         results[:hashtags] = perform_hashtags_search!
       end
     end
