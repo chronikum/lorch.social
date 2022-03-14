@@ -8,9 +8,6 @@ class SearchService < BaseService
     @limit   = limit.to_i
     @offset  = options[:type].blank? ? 0 : options[:offset].to_i
     @resolve = options[:resolve] || false
-	puts("HALLOOOOO")
-	fulltext = search_word(query)
-	# SELECT text FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', 'Kaffeemaschinen')
     default_results.tap do |results|
       next if @query.blank? || @limit.zero?
       if url_query?
@@ -22,20 +19,6 @@ class SearchService < BaseService
         results[:hashtags] = perform_hashtags_search!
       end
     end
-  end
-  
-  def search_word(keyword)
-	results = ActiveRecord::Base.connection.execute("SELECT * FROM statuses WHERE to_tsvector('german', text) @@ to_tsquery('german', '#{keyword}') AND visibility = 0");
-	
-	if results.present?
-		puts("PRINTING RESULTS")
-		results.each do |result|
-			puts(result.to_json)
-		end
-	  return results
-	else
-	  return nil
-	end
   end
 
   private
