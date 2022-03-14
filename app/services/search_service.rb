@@ -18,6 +18,9 @@ class SearchService < BaseService
       elsif @query.present?
         results[:accounts] = perform_accounts_search!
         results[:statuses] = perform_statuses_search!
+		results[:statuses].each do |result|
+			puts(result.to_json)
+		end
         results[:hashtags] = perform_hashtags_search!
       end
     end
