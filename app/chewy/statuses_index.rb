@@ -38,6 +38,7 @@ class StatusesIndex < Chewy::Index
     end
 
     crutch :favourites do |collection|
+      data = collection
       data.each.with_object({}) { |(id, name), result| (result[id] ||= []).push(name) }
     end
 
