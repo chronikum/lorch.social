@@ -66,12 +66,6 @@ export function submitSearch(tags) {
         console.log(response.data.statuses);
         dispatch(importFetchedStatuses(response.data.statuses));
       }
-	  
-	  if (response.data.more) {
-        console.log('MORE DATA')
-        console.log(response.data.more);
-        // dispatch(importFetchedStatuses(response.data.more));
-      }
 
       dispatch(fetchSearchSuccess(response.data, value));
       dispatch(fetchRelationships(response.data.accounts.map(item => item.id)));
