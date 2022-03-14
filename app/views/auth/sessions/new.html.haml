@@ -1,6 +1,6 @@
 .rich-formatting-centered
   %h1= 'lorch.social'
-  %p= 'Willkommen auf der Biet und Suchplattform für Flüchtlinge. Um Dinge anbieten zu können, erstellen Sie bitte einen Account. Alle Ihre Daten werden sicher und geheim verarbeitet.'
+  %p= 'Willkommen auf der Biet und Suchplattform. Um Dinge anbieten zu können, erstellen Sie bitte einen Account. Alle Ihre Daten werden sicher und geheim verarbeitet.'
 - content_for :page_title do
   = t('auth.login')
 - content_for :header_tags do
@@ -32,3 +32,6 @@
   %button.button.centered.full-width.primary-button.auth-button.forgot-password-button
     %h3= link_to t('Passwort vergessen...'), new_user_password_path
 .form-footer= render 'auth/shared/links'
+<br>
+<hr>
+%p Für komplexe technische Fragen kontaktieren Sie bitte <a href="mailto:lorch@nosc.io">lorch@nosc.io</a>. Bitte bedenken Sie, dass der technische Support ehrenamtlich ist und wir bei Bedienproblemen oder Verständnisfragen unter Umständen nicht helfen können.<br>Mit Liebe fürs Detail gebaut für die Stadt Lorch ❤️
