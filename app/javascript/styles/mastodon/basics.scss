@@ -1,3 +1,40 @@
+
+// GOTO REGISTER BUTTON
+body > div.container-alt-auth > div > div:nth-child(3) > button > h3 > a  {
+	text-decoration: none !important;
+	color: white;
+	span {
+		color: white;
+	}
+}
+// BACK TO LOGIN BUTTON
+body > div.container-alt-auth > div > div.rich-formatting-centered > button > span > a {
+	text-decoration: none !important;
+	color: white;
+	span {
+		color: white;
+	}
+}
+
+body > div.container-alt-auth > div > div:nth-child(4) > button > h3 > a {
+	text-decoration: none !important;
+	color: white;
+	span {
+		color: white;
+	}
+}
+// FORGOT PASSWORD BUTTON
+.forgot-password-button {
+	background-color: gray;
+}
+
+
+.info-card-register {
+	padding: 5px;
+	border-radius: 4px;
+	background-color: #FFEEC0
+}
+
 @function hex-color($color) {
   @if type-of($color) == 'color' {
     $color: str-slice(ie-hex-str($color), 4);

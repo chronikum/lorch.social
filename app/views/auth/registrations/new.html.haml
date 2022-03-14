@@ -6,7 +6,8 @@
 
 = simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { novalidate: false }) do |f|
   = render 'shared/error_messages', object: resource
-
+  .info-card-register
+    %p Bitte wählen Sie einen Nutzernamen, der Ihrem echtem Namen entspricht oder daran angelehnt ist. Er darf KEINE Sonderzeichen wie Punkte oder Leerzeichen enthalten. <br>Beispiele: MaxMustermann, ErikaMusterfrau, MaximilianMustermann
   - if @invite.present? && @invite.autofollow?
     .fields-group.invited-by
       %p.hint= t('invites.invited_by')
@@ -40,5 +41,9 @@
 
   .actions
     = f.button :button, @invite.present? ? t('auth.register') : sign_up_message, type: :submit
+.rich-formatting-centered
+  %p= 'Sie haben doch einen Account? Hier geht es zurück zum Login'
+  %button.button.centered.primary-button.auth-button
+    %span= link_to t('Zurück zum Login'), '/auth/sign_in'
 
 .form-footer= render 'auth/shared/links'

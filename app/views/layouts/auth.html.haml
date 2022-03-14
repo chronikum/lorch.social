@@ -3,16 +3,7 @@
 
 - content_for :content do
   .container-alt-auth
-    .rich-formatting-centered
-      %h1= 'lorch.social'
-      %b= 'HINWEIS'
-      %p= 'Willkommen auf der Biet und Suchplattform für Flüchtlinge aus der Ukraine. Um Dinge anbieten zu können, erstellen Sie bitte einen Account. Alle Ihre Daten werden sicher und geheim verarbeitet.'
-      %p= 'Wenn Sie bereits einen Account haben, können Sie sich hier einloggen.'
     .form-container
       = render 'flashes'
       = yield
-    .rich-formatting-centered
-      %p= 'Sie haben noch keinen Account? Das ist kein Problem:'
-    %button.button.centered.full-width.primary-button
-      %li= link_to t('ZUR REGISTRIERUNG!'), available_sign_up_path
 = render template: 'layouts/application'

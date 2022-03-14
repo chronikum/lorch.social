@@ -1,9 +1,10 @@
+.rich-formatting-centered
+  %h1= 'lorch.social'
+  %p= 'Willkommen auf der Biet und Suchplattform für Flüchtlinge. Um Dinge anbieten zu können, erstellen Sie bitte einen Account. Alle Ihre Daten werden sicher und geheim verarbeitet.'
 - content_for :page_title do
   = t('auth.login')
-
 - content_for :header_tags do
   = render partial: 'shared/og'
-
 = simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
   .fields-group
     - if use_seamless_external_login?
@@ -23,5 +24,11 @@
     .actions
       - resource_class.omniauth_providers.each do |provider|
         = link_to t("auth.providers.#{provider}", default: provider.to_s.chomp("_oauth2").capitalize), omniauth_authorize_path(resource_name, provider), class: "button button-#{provider}", method: :post
-
+.rich-formatting-centered
+  %p= 'Sie haben noch keinen Account? Das ist kein Problem:'
+  %button.button.centered.full-width.primary-button.auth-button
+    %h3= link_to t('ZUR REGISTRIERUNG!'), available_sign_up_path
+.rich-formatting-centered
+  %button.button.centered.full-width.primary-button.auth-button.forgot-password-button
+    %h3= link_to t('Passwort vergessen...'), new_user_password_path
 .form-footer= render 'auth/shared/links'
