@@ -15,7 +15,6 @@ class SearchService < BaseService
       elsif @query.present?
         results[:accounts] = perform_accounts_search!
         results[:statuses] = perform_full_text_search!
-		results[:more] = perform_full_text_search!
         results[:hashtags] = perform_hashtags_search!
       end
     end
