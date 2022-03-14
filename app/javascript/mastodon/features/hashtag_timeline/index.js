@@ -73,11 +73,11 @@ class HashtagTimeline extends React.PureComponent {
    */
   showSearchbar = (value) => {
     if (value?.toLowerCase() === ('suche')) {
-      return <SearchContainerPrefix isSuchen />;
+      return <SearchContainerPrefix isSuchen openInRoute />;
     } else if (value?.toLowerCase() === ('biete')) {
-      return <SearchContainerPrefix isBieten />;
+      return <SearchContainerPrefix isBieten openInRoute />;
     }
-	return <SearchContainerPrefix/>;
+	return <SearchContainerPrefix openInRoute/>;
   }
 
   handleMove = (dir) => {

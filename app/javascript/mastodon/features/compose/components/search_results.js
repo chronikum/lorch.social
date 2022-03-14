@@ -48,20 +48,20 @@ class SearchResults extends ImmutablePureComponent {
 
   hasHashTags = (value) => {
     if (value?.toLowerCase().includes('#suche')) {
-      return <SearchContainerPrefix isSuchen />;
+      return <SearchContainerPrefix isSuchen openInRoute />;
     } else if (value?.toLowerCase().includes('#biete')) {
-      return <SearchContainerPrefix isBieten />;
+      return <SearchContainerPrefix isBieten openInRoute />;
     }
 	return false
   }
   
   showSearchbar = (value) => {
     if (value?.toLowerCase().includes('#suche')) {
-      return <SearchContainerPrefix isSuchen />;
+      return <SearchContainerPrefix isSuchen openInRoute />;
     } else if (value?.toLowerCase().includes('#biete')) {
-      return <SearchContainerPrefix isBieten />;
+      return <SearchContainerPrefix isBieten openInRoute />;
     }
-	return <SearchContainerPrefix/>;
+	return <SearchContainerPrefix />;
   }
 
   render () {
