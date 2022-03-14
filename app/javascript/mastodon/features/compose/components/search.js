@@ -142,6 +142,7 @@ class Search extends React.PureComponent {
             onChange={this.handleChange}
             onKeyUp={this.handleKeyUp}
             onFocus={this.handleFocus}
+			enterKeyHint='search'
             onBlur={this.handleBlur}
           />
         </label>
