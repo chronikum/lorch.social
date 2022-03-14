@@ -15,68 +15,20 @@
 
 Mastodon is a **free, open-source social network server** based on ActivityPub where users can follow friends and discover new ones. On Mastodon, users can publish anything they want: links, pictures, text, video. All Mastodon servers are interoperable as a federated network (users on one server can seamlessly communicate with users from another one, including non-Mastodon software that implements ActivityPub)!
 
-This is the lorch.social mod.   
+This is the lorch.social mod, maintained by an volunteer in the city Lorch fur refugees.   
 
-Click below to **learn more** in a video:
+It offers an real full text search (with elastic search), very basic offer/search-system for goods, and an more exchange focused interface.   
 
-[![Screenshot](https://blog.joinmastodon.org/2018/06/why-activitypub-is-the-future/ezgif-2-60f1b00403.gif)][youtube_demo]
+Because you may be looking for it, like I did, and I did not find any documentation on it:   
+To activate a real full text search, simple edit this line:
 
-[youtube_demo]: https://www.youtube.com/watch?v=IPSbNdBmWKE
-
-## Navigation
-
-- [Project homepage 🐘](https://joinmastodon.org)
-- [Support the development via Patreon][patreon]
-- [View sponsors](https://joinmastodon.org/sponsors)
-- [Blog](https://blog.joinmastodon.org)
-- [Documentation](https://docs.joinmastodon.org)
-- [Browse Mastodon servers](https://joinmastodon.org/#getting-started)
-- [Browse Mastodon apps](https://joinmastodon.org/apps)
-
-[patreon]: https://www.patreon.com/mastodon
-
-## Features
-
-<img src="https://docs.joinmastodon.org/elephant.svg" align="right" width="30%" />
-
-**No vendor lock-in: Fully interoperable with any conforming platform**
-
-It doesn't have to be Mastodon, whatever implements ActivityPub is part of the social network! [Learn more](https://blog.joinmastodon.org/2018/06/why-activitypub-is-the-future/)
-
-**Real-time, chronological timeline updates**
-
-See the updates of people you're following appear in real-time in the UI via WebSockets. There's a firehose view as well!
-
-**Media attachments like images and short videos**
-
-Upload and view images and WebM/MP4 videos attached to the updates. Videos with no audio track are treated like GIFs; normal videos are looped - like vines!
-
-**Safety and moderation tools**
-
-Private posts, locked accounts, phrase filtering, muting, blocking and all sorts of other features, along with a reporting and moderation system. [Learn more](https://blog.joinmastodon.org/2018/07/cage-the-mastodon/)
-
-**OAuth2 and a straightforward REST API**
-
-Mastodon acts as an OAuth2 provider so 3rd party apps can use the REST and Streaming APIs, resulting in a rich app ecosystem with a lot of choices!
-
-## Deployment
-
-**Tech stack:**
-
-- **Ruby on Rails** powers the REST API and other web pages
-- **React.js** and Redux are used for the dynamic parts of the interface
-- **Node.js** powers the streaming API
-
-**Requirements:**
-
-- **PostgreSQL** 9.5+
-- **Redis** 4+
-- **Ruby** 2.5+
-- **Node.js** 12+
-
-The repository includes deployment configurations for **Docker and docker-compose**, but also a few specific platforms like **Heroku**, **Scalingo**, and **Nanobox**. The [**stand-alone** installation guide](https://docs.joinmastodon.org/admin/install/) is available in the documentation.
-
-A **Vagrant** configuration is included for development purposes.
+```
+definition = parsed_query.apply(StatusesIndex.filter(term: { searchable_by: @account.id }))
+```
+to this   
+```
+definition = parsed_query.apply(StatusesIndex)
+```
 
 ## Contributing
 
