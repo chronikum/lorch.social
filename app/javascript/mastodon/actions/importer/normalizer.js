@@ -44,41 +44,41 @@ export function normalizeAccount(account) {
 
 export function normalizeStatus(status, normalOldStatus) {
   const normalStatus   = { ...status };
-//   normalStatus.account = status.account.id;
+  normalStatus.account = status.account.id;
 
-//   if (status.reblog && status.reblog.id) {
-//     normalStatus.reblog = status.reblog.id;
-//   }
+  if (status.reblog && status.reblog.id) {
+    normalStatus.reblog = status.reblog.id;
+  }
 
-//   if (status.poll && status.poll.id) {
-//     normalStatus.poll = status.poll.id;
-//   }
+  if (status.poll && status.poll.id) {
+    normalStatus.poll = status.poll.id;
+  }
 
-//   // Only calculate these values when status first encountered
-//   // Otherwise keep the ones already in the reducer
-//   if (normalOldStatus) {
-//     normalStatus.search_index = normalOldStatus.get('search_index');
-//     normalStatus.contentHtml = normalOldStatus.get('contentHtml');
-//     normalStatus.spoilerHtml = normalOldStatus.get('spoilerHtml');
-//     normalStatus.spoiler_text = normalOldStatus.get('spoiler_text');
-//     normalStatus.hidden = normalOldStatus.get('hidden');
-//   } else {
-//     // If the status has a CW but no contents, treat the CW as if it were the
-//     // status' contents, to avoid having a CW toggle with seemingly no effect.
-//     if (normalStatus.spoiler_text && !normalStatus.content) {
-//       normalStatus.content = normalStatus.spoiler_text;
-//       normalStatus.spoiler_text = '';
-//     }
+  // Only calculate these values when status first encountered
+  // Otherwise keep the ones already in the reducer
+  if (normalOldStatus) {
+    normalStatus.search_index = normalOldStatus.get('search_index');
+    normalStatus.contentHtml = normalOldStatus.get('contentHtml');
+    normalStatus.spoilerHtml = normalOldStatus.get('spoilerHtml');
+    normalStatus.spoiler_text = normalOldStatus.get('spoiler_text');
+    normalStatus.hidden = normalOldStatus.get('hidden');
+  } else {
+    // If the status has a CW but no contents, treat the CW as if it were the
+    // status' contents, to avoid having a CW toggle with seemingly no effect.
+    if (normalStatus.spoiler_text && !normalStatus.content) {
+      normalStatus.content = normalStatus.spoiler_text;
+      normalStatus.spoiler_text = '';
+    }
 
-//     const spoilerText   = normalStatus.spoiler_text || '';
-//     const searchContent = ([spoilerText, status.content].concat((status.poll && status.poll.options) ? status.poll.options.map(option => option.title) : [])).join('\n\n').replace(/<br\s*\/?>/g, '\n').replace(/<\/p><p>/g, '\n\n');
-//     const emojiMap      = makeEmojiMap(normalStatus);
+    const spoilerText   = normalStatus.spoiler_text || '';
+    const searchContent = ([spoilerText, status.content].concat((status.poll && status.poll.options) ? status.poll.options.map(option => option.title) : [])).join('\n\n').replace(/<br\s*\/?>/g, '\n').replace(/<\/p><p>/g, '\n\n');
+    const emojiMap      = makeEmojiMap(normalStatus);
 
-//     normalStatus.search_index = domParser.parseFromString(searchContent, 'text/html').documentElement.textContent;
-//     normalStatus.contentHtml  = emojify(normalStatus.content, emojiMap);
-//     normalStatus.spoilerHtml  = emojify(escapeTextContentForBrowser(spoilerText), emojiMap);
-//     normalStatus.hidden       = expandSpoilers ? false : spoilerText.length > 0 || normalStatus.sensitive;
-//   }
+    normalStatus.search_index = domParser.parseFromString(searchContent, 'text/html').documentElement.textContent;
+    normalStatus.contentHtml  = emojify(normalStatus.content, emojiMap);
+    normalStatus.spoilerHtml  = emojify(escapeTextContentForBrowser(spoilerText), emojiMap);
+    normalStatus.hidden       = expandSpoilers ? false : spoilerText.length > 0 || normalStatus.sensitive;
+  }
 
   return normalStatus;
 }
