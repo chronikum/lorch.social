@@ -109,6 +109,29 @@ class Header extends ImmutablePureComponent {
     }
   }
 
+  /**
+   * Opens direct message
+   */
+  handleDirectClick = () => {
+	const { account } = this.props;
+    this.props.onDirect(account);
+  }
+
+  /**
+   * Renders a direct message button
+   */
+  renderDirectMessageButton = () => {
+	const { account } = this.props;
+	  if (me !== account.get('id')) {
+      return (
+        <div className='button-holder padding'>
+          <button onClick={this.handleDirectClick} className='button primary'>Direktnachricht senden</button>
+        </div>
+		);
+	  }
+	  return false;
+  }
+
   handleMouseLeave = ({ currentTarget }) => {
     if (autoPlayGif) {
       return;
@@ -282,7 +305,7 @@ class Header extends ImmutablePureComponent {
               <div className='account__header__tabs__buttons'>
                 {actionBtn}
                 {bellBtn}
-
+                {this.renderDirectMessageButton()}
                 <DropdownMenuContainer items={menu} icon='ellipsis-v' size={24} direction='right' />
               </div>
             )}
@@ -322,9 +345,7 @@ class Header extends ImmutablePureComponent {
                   ))}
                 </div>
               )}
-
               {account.get('id') !== me && !suspended && <AccountNoteContainer account={account} />}
-
               {account.get('note').length > 0 && account.get('note') !== '<p></p>' && <div className='account__header__content translate' dangerouslySetInnerHTML={content} />}
 
               <div className='account__header__joined'><FormattedMessage id='account.joined' defaultMessage='Joined {date}' values={{ date: intl.formatDate(account.get('created_at'), { year: 'numeric', month: 'short', day: '2-digit' }) }} /></div>

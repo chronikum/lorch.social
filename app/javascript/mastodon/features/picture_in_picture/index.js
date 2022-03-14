@@ -27,6 +27,7 @@ class PictureInPicture extends React.Component {
     foregroundColor: PropTypes.string,
     accentColor: PropTypes.string,
     dispatch: PropTypes.func.isRequired,
+	onDirect: PropTypes.func,
   };
 
   handleClose = () => {

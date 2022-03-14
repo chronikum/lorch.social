@@ -662,9 +662,8 @@ html {
 
 .compose-form .compose-form__warning {
   border-color: $ui-highlight-color;
-  background-color: rgba($ui-highlight-color, 0.1);
-
-  &,
+  background-color: black;
+  color: white;
   a {
     color: $ui-highlight-color;
   }
