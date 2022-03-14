@@ -62,7 +62,15 @@ export function submitSearch(tags) {
       }
 
       if (response.data.statuses) {
+		console.log('ORIGINAL DATA')
+        console.log(response.data.statuses);
         dispatch(importFetchedStatuses(response.data.statuses));
+      }
+	  
+	  if (response.data.more) {
+        console.log('MORE DATA')
+        console.log(response.data.more);
+        // dispatch(importFetchedStatuses(response.data.more));
       }
 
       dispatch(fetchSearchSuccess(response.data, value));
