@@ -28,10 +28,8 @@ class SearchPopout extends React.PureComponent {
               <h4><FormattedMessage id='search_popout.search_format' defaultMessage='Advanced search format' /></h4>
 
               <ul>
-                <li><em>#example</em> <FormattedMessage id='search_popout.tips.hashtag' defaultMessage='hashtag' /></li>
-                <li><em>@username@domain</em> <FormattedMessage id='search_popout.tips.user' defaultMessage='user' /></li>
-                <li><em>URL</em> <FormattedMessage id='search_popout.tips.user' defaultMessage='user' /></li>
-                <li><em>URL</em> <FormattedMessage id='search_popout.tips.status' defaultMessage='status' /></li>
+                <li><em>#suche</em> <FormattedMessage id='search_popout.tips.hashtag2' defaultMessage='Kaffeemaschine' /></li>
+                <li><em>#biete</em> <FormattedMessage id='search_popout.tips.user2' defaultMessage='Schlafplatz' /></li>
               </ul>
 
               {extraInformation}

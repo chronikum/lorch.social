@@ -152,7 +152,7 @@ class HomeTimeline extends React.PureComponent {
           scrollKey={`home_timeline-${columnId}`}
           onLoadMore={this.handleLoadMore}
           timelineId='home'
-          emptyMessage={<FormattedMessage id='empty_column.home' defaultMessage='Your home timeline is empty! Follow more people to fill it up. {suggestions}' values={{ suggestions: <Link to='/start'><FormattedMessage id='empty_column.home.suggestions' defaultMessage='See some suggestions' /></Link> }} />}
+          emptyMessage={<FormattedMessage id='empty_column.home2' defaultMessage='Willkommen! Unter "Das Neuste" finden Sie die neusten Beiträge, und Sie können die Schaltfelder Suche und Bieten nutzen, um direkt auf die Kategorien zuzugreifen. Nutzen Sie die Suche und finden Sie so schnell was Sie benötigen. Sie können auch Usern folgen, um auf dem Neusten Stand zu bleiben, hier sind ein paar Vorschläge: {suggestions} ' values={{ suggestions: <Link to='/start'><FormattedMessage id='empty_column.home.suggestions' defaultMessage='See some suggestions' /></Link> }} />}
           bindToDocument={!multiColumn}
         />
       </Column>
