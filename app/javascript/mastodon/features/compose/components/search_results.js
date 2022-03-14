@@ -54,6 +54,15 @@ class SearchResults extends ImmutablePureComponent {
     }
 	return false
   }
+  
+  showSearchbar = (value) => {
+    if (value?.toLowerCase().includes('#suche')) {
+      return <SearchContainerPrefix isSuchen />;
+    } else if (value?.toLowerCase().includes('#biete')) {
+      return <SearchContainerPrefix isBieten />;
+    }
+	return <SearchContainerPrefix/>;
+  }
 
   render () {
     const { intl, results, suggestions, dismissSuggestion, searchTerm } = this.props;
@@ -140,10 +149,6 @@ class SearchResults extends ImmutablePureComponent {
             <Icon id='search' fixedWidth />
             <FormattedMessage id='search_results.total' defaultMessage='{count, number} {count, plural, one {result} other {results}}' values={{ count }} />
           </div>
-          <div className='show-search'>
-            {this.hasHashTags(searchTerm)}
-          </div>
-
           {accounts}
           {statuses}
           {hashtags}

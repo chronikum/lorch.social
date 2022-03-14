@@ -132,12 +132,12 @@ class Search extends React.PureComponent {
     return (
       <div className='search'>
         <label>
-          <span style={{ display: 'none' }}>{(this.props.isSuchen || this.props.isBieten) ? `${this.getHashtagPrefixwithValue()} wird durchsucht` : intl.formatMessage(messages.placeholder)}</span>
+          <span style={{ display: 'none' }}>{(this.props.isSuchen || this.props.isBieten) ? `${this.getHashtagPrefixwithValue()} durchsuchen` : intl.formatMessage(messages.placeholder)}</span>
           <input
             ref={this.setRef}
             className='search__input'
             type='text'
-            placeholder={(this.props.isSuchen || this.props.isBieten) ? `${this.getHashtagPrefixwithValue()} wird durchsucht` : intl.formatMessage(messages.placeholder)}
+            placeholder={(this.props.isSuchen || this.props.isBieten) ? `${this.getHashtagPrefixwithValue()} durchsuchen` : intl.formatMessage(messages.placeholder)}
             value={value}
             onChange={this.handleChange}
             onKeyUp={this.handleKeyUp}

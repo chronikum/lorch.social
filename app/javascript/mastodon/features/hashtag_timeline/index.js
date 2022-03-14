@@ -10,6 +10,7 @@ import { addColumn, removeColumn, moveColumn } from '../../actions/columns';
 import { FormattedMessage } from 'react-intl';
 import { connectHashtagStream } from '../../actions/streaming';
 import { isEqual } from 'lodash';
+import SearchContainerPrefix from 'mastodon/features/compose/containers/search_container_prefix';
 
 const mapStateToProps = (state, props) => ({
   hasUnread: state.getIn(['timelines', `hashtag:${props.params.id}${props.params.local ? ':local' : ''}`, 'unread']) > 0,
@@ -64,6 +65,19 @@ class HashtagTimeline extends React.PureComponent {
     } else {
       return '';
     }
+  }
+  
+  /**
+   * renders a fitting search bar
+   * @returns component
+   */
+  showSearchbar = (value) => {
+    if (value?.toLowerCase() === ('suche')) {
+      return <SearchContainerPrefix isSuchen />;
+    } else if (value?.toLowerCase() === ('biete')) {
+      return <SearchContainerPrefix isBieten />;
+    }
+	return <SearchContainerPrefix/>;
   }
 
   handleMove = (dir) => {
@@ -148,7 +162,7 @@ class HashtagTimeline extends React.PureComponent {
         >
           {columnId && <ColumnSettingsContainer columnId={columnId} />}
         </ColumnHeader>
-
+        {this.showSearchbar(id)}
         <StatusListContainer
           trackScroll={!pinned}
           scrollKey={`hashtag_timeline-${columnId}`}
