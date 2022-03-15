@@ -227,6 +227,10 @@ class ComposeForm extends ImmutablePureComponent {
 
     this.props.onPickEmoji(position, data, needsSpace);
   }
+  
+  setPrivacyPublic = () => {
+    this.props.setPublic();
+  }
 
   /**
    * Returns title for current action visible
@@ -234,7 +238,7 @@ class ComposeForm extends ImmutablePureComponent {
    */
   titleForCurrentComposeAction = () => {
 	  if (this.props.privacy === 'private' || this.props.privacy === 'direct') {
-		  return 'Direktnachricht schreiben';
+		  return <span><Icon id='close' onClick={this.setPrivacyPublic} className='column-close-button__icon' fixedWidth /> Direktnachricht schreiben</span>;
 	  }
 	  if (this.props.isReplying) {
 		  const statusUsername = this.props.status.get('account').get('username') || 'User';

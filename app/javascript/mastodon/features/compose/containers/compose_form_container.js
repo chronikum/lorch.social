@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import ComposeForm from '../components/compose_form';
+import { cancelReplyCompose } from '../../../actions/compose';
 import {
   changeCompose,
   submitCompose,
@@ -32,6 +33,10 @@ const mapStateToProps = state => ({
   status: getStatus(state, { id: state.getIn(['compose', 'in_reply_to']) }),
 });
 const mapDispatchToProps = (dispatch) => ({
+	
+   setPublic () {
+	dispatch(cancelReplyCompose());
+   },
 
   onChange (text) {
     dispatch(changeCompose(text));
