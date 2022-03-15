@@ -86,7 +86,7 @@ class ComposeForm extends ImmutablePureComponent {
     const { isSubmitting, isChangingUpload, isUploading, anyMedia } = this.props;
     const fulltext = this.getFulltextForCharacterCounting();
     const isOnlyWhitespace = fulltext.length !== 0 && fulltext.trim().length === 0;
-	if (length(fulltext) === 0) return false;
+    if (length(fulltext) === 0) return false;
     return !(isSubmitting || isUploading || isChangingUpload || length(fulltext) > 5000 || (isOnlyWhitespace && !anyMedia));
   }
 
@@ -103,38 +103,38 @@ class ComposeForm extends ImmutablePureComponent {
 
     this.props.onSubmit(this.context.router ? this.context.router.history : null);
   }
-  
+
   handleSubmitSuchen = () => {
     if (this.props.text !== this.autosuggestTextarea.textarea.value) {
       // Something changed the text inside the textarea (e.g. browser extensions like Grammarly)
       // Update the state to match the current text
 	  this.props.onChange(this.autosuggestTextarea.textarea.value);
     }
-	
-	
+
+
     if (!this.canSubmit()) {
-		return;
+      return;
     }
-	
-	this.autosuggestTextarea.textarea.value = '#suche ' + this.props.text;
-	this.props.onChange(this.autosuggestTextarea.textarea.value);
+
+    this.autosuggestTextarea.textarea.value = '#suche ' + this.props.text;
+    this.props.onChange(this.autosuggestTextarea.textarea.value);
     this.props.onSubmit(this.context.router ? this.context.router.history : null);
   }
-  
+
   handleSubmitBieten = () => {
     if (this.props.text !== this.autosuggestTextarea.textarea.value) {
       // Something changed the text inside the textarea (e.g. browser extensions like Grammarly)
       // Update the state to match the current text
       this.props.onChange(this.autosuggestTextarea.textarea.value);
     }
-	
-	
+
+
     if (!this.canSubmit()) {
-		return;
+      return;
     }
-	
-	this.autosuggestTextarea.textarea.value = '#biete ' + this.props.text;
-	this.props.onChange(this.autosuggestTextarea.textarea.value);
+
+    this.autosuggestTextarea.textarea.value = '#biete ' + this.props.text;
+    this.props.onChange(this.autosuggestTextarea.textarea.value);
     this.props.onSubmit(this.context.router ? this.context.router.history : null);
   }
 
@@ -227,7 +227,7 @@ class ComposeForm extends ImmutablePureComponent {
 
     this.props.onPickEmoji(position, data, needsSpace);
   }
-  
+
   /**
    * Returns title for current action visible
    * @returns appropiate title
@@ -242,7 +242,7 @@ class ComposeForm extends ImmutablePureComponent {
 	  }
 	  return 'Angebot erstellen oder etwas suchen';
   }
-  
+
   /**
    * Renders the component which displays the suchen and bieten buttons or, when private message, displays only the
    * send private message button or adds a "replying" button when replying to a public post
