@@ -90,7 +90,7 @@
   "compose_form.hashtag_warning": "Dieser Beitrag wird nicht durch Hashtags entdeckbar sein, weil er ungelistet ist. Nur öffentliche Beiträge tauchen in Hashtag-Zeitleisten auf.",
   "compose_form.lock_disclaimer": "Dein Profil ist nicht {locked}. Wer dir folgen will, kann das jederzeit tun und dann auch deine privaten Beiträge sehen.",
   "compose_form.lock_disclaimer.lock": "gesperrt",
-  "compose_form.placeholder": "Erstellen Sie ein Angebot mit #biete oder suchen Sie mit #suche nach Dingen!",
+  "compose_form.placeholder": "Erstellen Sie ein Angebot mit dem Biete-Knopf oder fragen Sie nach Dinge mit dem Suchen-Knopf",
   "compose_form.poll.add_option": "Eine Wahl hinzufügen",
   "compose_form.poll.duration": "Umfragedauer",
   "compose_form.poll.option_placeholder": "Wahl {number}",
