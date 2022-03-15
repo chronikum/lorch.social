@@ -3,7 +3,13 @@ $fluid-breakpoint: $maximum-width + 20px;
 $column-breakpoint: 700px;
 $small-breakpoint: 960px;
 
+// Hiding the follower only button
+body > div.privacy-dropdown__dropdown.bottom > div:nth-child(3) {
+	display: none;
+}
 
+
+// INTERESTED BUTTON
 .interested-button {
 	background: lighten($ui-base-color, 4%);
 	&:active,
@@ -56,7 +62,7 @@ $small-breakpoint: 960px;
 
 // WELTKUGEL IM PUBLISHER
 #mastodon > div > div > div.columns-area__panels > div.columns-area__panels__pane.columns-area__panels__pane--compositional > div > div > div.compose-form > div.compose-form__buttons-wrapper > div.compose-form__buttons > div.privacy-dropdown.bottom > div > button {
-	display: none;
+	display: block;
 }
 
 // CONTENT WARNING IM PUBLISHER
