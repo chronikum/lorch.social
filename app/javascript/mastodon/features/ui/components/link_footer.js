@@ -60,8 +60,8 @@ class LinkFooter extends React.PureComponent {
           />
           <FormattedMessage
             id='getting_started.privacy'
-            defaultMessage='Diese Seite gibt keine persönlichen Informationen an Dritte weiter, die Daten werden weder analysiert noch gesammelt. Sie läuft auf einem sicheren Server in Deutschland.'
-            values={{ github: <span><a href={source_url} rel='noopener noreferrer' target='_blank'>{repository}</a> (v{version})</span> }}
+            defaultMessage='Diese Seite gibt keine persönlichen Informationen an Dritte weiter, die Daten werden weder analysiert noch gesammelt. Sie läuft auf einem sicheren Server in Deutschland. {imprint}'
+            values={{ github: <span><a href={source_url} rel='noopener noreferrer' target='_blank'>{repository}</a> (v{version})</span>, imprint:  <a href='/impressum.html'>Impressum</a>}}
           />
         </p>
       </div>
